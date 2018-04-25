@@ -1,0 +1,7 @@
+- name: install openstack 
+  gather_facts: no
+  hosts: all
+  roles:
+     - Environment
+
+

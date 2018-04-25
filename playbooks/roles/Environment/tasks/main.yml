@@ -1,0 +1,12 @@
+---
+- include: host-config.yml
+
+- include: ntp.yml
+
+- include: openstack-package.yml
+
+- include: sql.yml
+
+- include: rabbitmq.yml
+
+- include: memcached.yml

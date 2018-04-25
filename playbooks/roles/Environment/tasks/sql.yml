@@ -1,0 +1,12 @@
+- name: install sql
+  yum: name={{item}} state=installed
+  with_items:
+      - mariadb
+      - mariadb-server
+      - python2-PyMySQL
+
+- name: add mariadb_openstack.cnf file
+  copy: src=./files/mariadb_openstack.cnf dest=/etc/my.cnf.d/
+
+- name: restart mariadb
+  service: name=mariadb state=started enabled=yes

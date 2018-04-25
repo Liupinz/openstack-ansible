@@ -1,0 +1,10 @@
+- name: install centos-release-openstack-newton
+  yum: name=centos-release-openstack-newton state=installed
+
+- name: start openstack storehouse and install openstack client,openstack-selinux
+  yum: name={{item}} state=installed
+  with_items:
+      - python-openstackclient
+      - openstack-selinux
+
+
