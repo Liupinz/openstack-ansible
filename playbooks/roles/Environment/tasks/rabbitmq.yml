@@ -6,3 +6,4 @@
 
 - name: useradd openstack 
   shell: rabbitmqctl add_user openstack 123456 && rabbitmqctl set_permissions openstack ".*" ".*" ".*"
+  ignore_errors: true
