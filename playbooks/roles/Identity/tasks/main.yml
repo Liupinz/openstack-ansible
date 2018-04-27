@@ -1,2 +1,12 @@
----
-# tasks file for openstack
+- name: install depends
+  yum: name={{ item }} state=installed
+  with_items:
+      - python-pip
+      - python-devel
+      - MySQL-python
+
+- name: 01
+  include: sql.yml
+
+- name: 02
+  include: sql.yml

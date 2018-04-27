@@ -2,6 +2,6 @@
   gather_facts: no
   hosts: all
   roles:
-     - Environment
-
+      - Environment
+      - Identity
 
