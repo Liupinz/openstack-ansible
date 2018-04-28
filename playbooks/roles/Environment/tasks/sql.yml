@@ -6,10 +6,16 @@
       - python2-PyMySQL
 
 - name: add mariadb_openstack.cnf file
-  copy: src=./files/mariadb_openstack.cnf dest=/etc/my.cnf.d/
+  copy: src=./files/openstack.cnf dest=/etc/my.cnf.d/
 
-- name: change database password
-  command: mysqladmin -u root password 123456
+- name: install expect 
+  yum: name=expect state=installed
+
+- name: copy file
+  copy: src=./files/mysql_secure_installation.exp dest=/root/
+
+- name: expect the mysql_secure_installation.exp
+  shell: expect /root/mysql_secure_installation.exp && touch test.txt
 
 - name: restart mariadb
   service: name=mariadb state=started enabled=yes

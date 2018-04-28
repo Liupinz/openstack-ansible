@@ -519,3 +519,856 @@
 2018-04-27 19:40:41,273 p=2227 u=root |  Environment : add host file --------------------------------------------- 0.73s
 2018-04-27 19:40:41,274 p=2227 u=root |  Environment : change database password ---------------------------------- 0.69s
 2018-04-27 19:40:41,274 p=2227 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 0.37s
+2018-04-28 14:04:41,063 p=3201 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:04:41,210 p=3201 u=root |  TASK [Environment : set hostname] **********************************************
+2018-04-28 14:04:41,211 p=3201 u=root |  Saturday 28 April 2018  14:04:41 +0800 (0:00:00.154)       0:00:00.154 ******** 
+2018-04-28 14:04:57,907 p=3201 u=root |  changed: [controller]
+2018-04-28 14:04:57,911 p=3201 u=root |  TASK [Environment : add host file] *********************************************
+2018-04-28 14:04:57,911 p=3201 u=root |  Saturday 28 April 2018  14:04:57 +0800 (0:00:16.700)       0:00:16.855 ******** 
+2018-04-28 14:04:58,611 p=3201 u=root |  changed: [controller]
+2018-04-28 14:04:58,615 p=3201 u=root |  TASK [Environment : install chrony] ********************************************
+2018-04-28 14:04:58,616 p=3201 u=root |  Saturday 28 April 2018  14:04:58 +0800 (0:00:00.704)       0:00:17.559 ******** 
+2018-04-28 14:05:40,839 p=3201 u=root |  changed: [controller]
+2018-04-28 14:05:40,843 p=3201 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 14:05:40,844 p=3201 u=root |  Saturday 28 April 2018  14:05:40 +0800 (0:00:42.227)       0:00:59.787 ******** 
+2018-04-28 14:05:41,288 p=3201 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:05:41,668 p=3201 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:05:42,046 p=3201 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:05:42,387 p=3201 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:05:42,400 p=3201 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 14:05:42,401 p=3201 u=root |  Saturday 28 April 2018  14:05:42 +0800 (0:00:01.557)       0:01:01.344 ******** 
+2018-04-28 14:05:42,784 p=3201 u=root |  changed: [controller]
+2018-04-28 14:05:42,792 p=3201 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-04-28 14:05:42,793 p=3201 u=root |  Saturday 28 April 2018  14:05:42 +0800 (0:00:00.391)       0:01:01.736 ******** 
+2018-04-28 14:05:44,626 p=3201 u=root |  changed: [controller]
+2018-04-28 14:05:44,630 p=3201 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-04-28 14:05:44,630 p=3201 u=root |  Saturday 28 April 2018  14:05:44 +0800 (0:00:01.837)       0:01:03.574 ******** 
+2018-04-28 14:05:48,889 p=3201 u=root |  changed: [controller]
+2018-04-28 14:05:48,893 p=3201 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-04-28 14:05:48,894 p=3201 u=root |  Saturday 28 April 2018  14:05:48 +0800 (0:00:04.262)       0:01:07.837 ******** 
+2018-04-28 14:11:37,257 p=3201 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-04-28 14:11:37,262 p=3201 u=root |  TASK [Environment : install expect] ********************************************
+2018-04-28 14:11:37,262 p=3201 u=root |  Saturday 28 April 2018  14:11:37 +0800 (0:05:48.368)       0:06:56.206 ******** 
+2018-04-28 14:11:42,776 p=3201 u=root |  changed: [controller]
+2018-04-28 14:11:42,783 p=3201 u=root |  TASK [Environment : copy file] *************************************************
+2018-04-28 14:11:42,783 p=3201 u=root |  Saturday 28 April 2018  14:11:42 +0800 (0:00:05.520)       0:07:01.727 ******** 
+2018-04-28 14:11:44,266 p=3201 u=root |  changed: [controller]
+2018-04-28 14:11:44,269 p=3201 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-04-28 14:11:44,270 p=3201 u=root |  Saturday 28 April 2018  14:11:44 +0800 (0:00:01.486)       0:07:03.213 ******** 
+2018-04-28 14:11:44,978 p=3201 u=root |  fatal: [controller]: FAILED! => {"changed": true, "cmd": "expect mysql_secure_installation.exp", "delta": "0:00:00.026289", "end": "2018-04-28 14:12:10.716939", "failed": true, "rc": 1, "start": "2018-04-28 14:12:10.690650", "stderr": "couldn't execute \"mysql_secure_installation\": no such file or directory\n    while executing\n\"spawn mysql_secure_installation\"\n    (file \"mysql_secure_installation.exp\" line 3)", "stdout": "spawn mysql_secure_installation", "stdout_lines": ["spawn mysql_secure_installation"], "warnings": []}
+2018-04-28 14:11:44,982 p=3201 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 14:11:44,982 p=3201 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 14:11:44,982 p=3201 u=root |  controller                 : ok=10   changed=10   unreachable=0    failed=1   
+2018-04-28 14:11:44,983 p=3201 u=root |  Saturday 28 April 2018  14:11:44 +0800 (0:00:00.713)       0:07:03.927 ******** 
+2018-04-28 14:11:44,983 p=3201 u=root |  =============================================================================== 
+2018-04-28 14:11:44,984 p=3201 u=root |  Environment : start openstack storehouse and install openstack client,openstack-selinux - 348.37s
+2018-04-28 14:11:44,984 p=3201 u=root |  Environment : install chrony ------------------------------------------- 42.23s
+2018-04-28 14:11:44,985 p=3201 u=root |  Environment : set hostname --------------------------------------------- 16.70s
+2018-04-28 14:11:44,985 p=3201 u=root |  Environment : install expect -------------------------------------------- 5.52s
+2018-04-28 14:11:44,985 p=3201 u=root |  Environment : install centos-release-openstack-newton ------------------- 4.26s
+2018-04-28 14:11:44,986 p=3201 u=root |  Environment : restart NTP ----------------------------------------------- 1.84s
+2018-04-28 14:11:44,986 p=3201 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 1.56s
+2018-04-28 14:11:44,986 p=3201 u=root |  Environment : copy file ------------------------------------------------- 1.49s
+2018-04-28 14:11:44,986 p=3201 u=root |  Environment : expect the mysql_secure_installation.exp ------------------ 0.71s
+2018-04-28 14:11:44,987 p=3201 u=root |  Environment : add host file --------------------------------------------- 0.70s
+2018-04-28 14:11:44,987 p=3201 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 0.39s
+2018-04-28 14:26:58,085 p=3406 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:26:58,182 p=3406 u=root |  TASK [Environment : set hostname] **********************************************
+2018-04-28 14:26:58,183 p=3406 u=root |  Saturday 28 April 2018  14:26:58 +0800 (0:00:00.102)       0:00:00.102 ******** 
+2018-04-28 14:27:09,486 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:09,491 p=3406 u=root |  TASK [Environment : add host file] *********************************************
+2018-04-28 14:27:09,491 p=3406 u=root |  Saturday 28 April 2018  14:27:09 +0800 (0:00:11.308)       0:00:11.411 ******** 
+2018-04-28 14:27:10,249 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:10,255 p=3406 u=root |  TASK [Environment : install chrony] ********************************************
+2018-04-28 14:27:10,255 p=3406 u=root |  Saturday 28 April 2018  14:27:10 +0800 (0:00:00.763)       0:00:12.175 ******** 
+2018-04-28 14:27:33,343 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:33,348 p=3406 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 14:27:33,348 p=3406 u=root |  Saturday 28 April 2018  14:27:33 +0800 (0:00:23.093)       0:00:35.268 ******** 
+2018-04-28 14:27:33,794 p=3406 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:27:34,152 p=3406 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:27:34,497 p=3406 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:27:34,829 p=3406 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 14:27:34,839 p=3406 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 14:27:34,839 p=3406 u=root |  Saturday 28 April 2018  14:27:34 +0800 (0:00:01.491)       0:00:36.759 ******** 
+2018-04-28 14:27:35,263 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:35,268 p=3406 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-04-28 14:27:35,268 p=3406 u=root |  Saturday 28 April 2018  14:27:35 +0800 (0:00:00.428)       0:00:37.188 ******** 
+2018-04-28 14:27:37,172 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:37,178 p=3406 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-04-28 14:27:37,179 p=3406 u=root |  Saturday 28 April 2018  14:27:37 +0800 (0:00:01.910)       0:00:39.099 ******** 
+2018-04-28 14:27:40,428 p=3406 u=root |  changed: [controller]
+2018-04-28 14:27:40,432 p=3406 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-04-28 14:27:40,433 p=3406 u=root |  Saturday 28 April 2018  14:27:40 +0800 (0:00:03.254)       0:00:42.353 ******** 
+2018-04-28 14:33:52,098 p=3406 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-04-28 14:33:52,110 p=3406 u=root |  TASK [Environment : install sql] ***********************************************
+2018-04-28 14:33:52,110 p=3406 u=root |  Saturday 28 April 2018  14:33:52 +0800 (0:06:11.677)       0:06:54.030 ******** 
+2018-04-28 14:35:20,125 p=3406 u=root |  changed: [controller] => (item=[u'mariadb', u'mariadb-server', u'python2-PyMySQL'])
+2018-04-28 14:35:20,135 p=3406 u=root |  TASK [Environment : add mariadb_openstack.cnf file] ****************************
+2018-04-28 14:35:20,136 p=3406 u=root |  Saturday 28 April 2018  14:35:20 +0800 (0:01:28.025)       0:08:22.056 ******** 
+2018-04-28 14:35:21,625 p=3406 u=root |  changed: [controller]
+2018-04-28 14:35:21,629 p=3406 u=root |  TASK [Environment : install expect] ********************************************
+2018-04-28 14:35:21,630 p=3406 u=root |  Saturday 28 April 2018  14:35:21 +0800 (0:00:01.493)       0:08:23.550 ******** 
+2018-04-28 14:35:26,427 p=3406 u=root |  changed: [controller]
+2018-04-28 14:35:26,434 p=3406 u=root |  TASK [Environment : copy file] *************************************************
+2018-04-28 14:35:26,435 p=3406 u=root |  Saturday 28 April 2018  14:35:26 +0800 (0:00:04.804)       0:08:28.354 ******** 
+2018-04-28 14:35:27,368 p=3406 u=root |  changed: [controller]
+2018-04-28 14:35:27,373 p=3406 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-04-28 14:35:27,373 p=3406 u=root |  Saturday 28 April 2018  14:35:27 +0800 (0:00:00.938)       0:08:29.293 ******** 
+2018-04-28 14:36:47,314 p=3406 u=root |  changed: [controller]
+2018-04-28 14:36:47,318 p=3406 u=root |  TASK [Environment : restart mariadb] *******************************************
+2018-04-28 14:36:47,319 p=3406 u=root |  Saturday 28 April 2018  14:36:47 +0800 (0:01:19.945)       0:09:49.239 ******** 
+2018-04-28 14:37:00,399 p=3406 u=root |  changed: [controller]
+2018-04-28 14:37:00,406 p=3406 u=root |  TASK [Environment : install rabbitmq] ******************************************
+2018-04-28 14:37:00,407 p=3406 u=root |  Saturday 28 April 2018  14:37:00 +0800 (0:00:13.088)       0:10:02.327 ******** 
+2018-04-28 14:38:27,897 p=3406 u=root |  changed: [controller]
+2018-04-28 14:38:27,903 p=3406 u=root |  TASK [Environment : start rabbitmq-server] *************************************
+2018-04-28 14:38:27,904 p=3406 u=root |  Saturday 28 April 2018  14:38:27 +0800 (0:01:27.496)       0:11:29.823 ******** 
+2018-04-28 14:38:35,030 p=3406 u=root |  changed: [controller]
+2018-04-28 14:38:35,036 p=3406 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 14:38:35,037 p=3406 u=root |  Saturday 28 April 2018  14:38:35 +0800 (0:00:07.133)       0:11:36.957 ******** 
+2018-04-28 14:38:41,028 p=3406 u=root |  changed: [controller]
+2018-04-28 14:38:41,035 p=3406 u=root |  TASK [Environment : install Memcached] *****************************************
+2018-04-28 14:38:41,036 p=3406 u=root |  Saturday 28 April 2018  14:38:41 +0800 (0:00:05.998)       0:11:42.956 ******** 
+2018-04-28 14:38:48,617 p=3406 u=root |  changed: [controller] => (item=[u'memcached', u'python-memcached'])
+2018-04-28 14:38:48,623 p=3406 u=root |  TASK [Environment : modify the /etc/sysconfig/memcached file] ******************
+2018-04-28 14:38:48,624 p=3406 u=root |  Saturday 28 April 2018  14:38:48 +0800 (0:00:07.587)       0:11:50.543 ******** 
+2018-04-28 14:38:49,068 p=3406 u=root |  changed: [controller]
+2018-04-28 14:38:49,072 p=3406 u=root |  TASK [Environment : restart memcached] *****************************************
+2018-04-28 14:38:49,073 p=3406 u=root |  Saturday 28 April 2018  14:38:49 +0800 (0:00:00.449)       0:11:50.993 ******** 
+2018-04-28 14:38:50,122 p=3406 u=root |  changed: [controller]
+2018-04-28 14:38:50,126 p=3406 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:38:50,127 p=3406 u=root |  Saturday 28 April 2018  14:38:50 +0800 (0:00:01.054)       0:11:52.047 ******** 
+2018-04-28 14:39:21,949 p=3406 u=root |  changed: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 14:39:21,959 p=3406 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 14:39:21,959 p=3406 u=root |  Saturday 28 April 2018  14:39:21 +0800 (0:00:31.832)       0:12:23.879 ******** 
+2018-04-28 14:39:22,789 p=3406 u=root |  changed: [controller]
+2018-04-28 14:39:22,795 p=3406 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 14:39:22,796 p=3406 u=root |  Saturday 28 April 2018  14:39:22 +0800 (0:00:00.836)       0:12:24.715 ******** 
+2018-04-28 14:39:23,734 p=3406 u=root |  failed: [controller] (item=localhost) => {"failed": true, "item": "localhost", "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: YES)\")"}
+2018-04-28 14:39:24,115 p=3406 u=root |  failed: [controller] (item=%) => {"failed": true, "item": "%", "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: YES)\")"}
+2018-04-28 14:39:24,120 p=3406 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 14:39:24,121 p=3406 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 14:39:24,121 p=3406 u=root |  controller                 : ok=22   changed=22   unreachable=0    failed=1   
+2018-04-28 14:39:24,122 p=3406 u=root |  Saturday 28 April 2018  14:39:24 +0800 (0:00:01.326)       0:12:26.042 ******** 
+2018-04-28 14:39:24,122 p=3406 u=root |  =============================================================================== 
+2018-04-28 14:39:24,123 p=3406 u=root |  Environment : start openstack storehouse and install openstack client,openstack-selinux - 371.68s
+2018-04-28 14:39:24,123 p=3406 u=root |  Environment : install sql ---------------------------------------------- 88.03s
+2018-04-28 14:39:24,124 p=3406 u=root |  Environment : install rabbitmq ----------------------------------------- 87.50s
+2018-04-28 14:39:24,124 p=3406 u=root |  Environment : expect the mysql_secure_installation.exp ----------------- 79.95s
+2018-04-28 14:39:24,124 p=3406 u=root |  Identity : install depends --------------------------------------------- 31.83s
+2018-04-28 14:39:24,125 p=3406 u=root |  Environment : install chrony ------------------------------------------- 23.09s
+2018-04-28 14:39:24,125 p=3406 u=root |  Environment : restart mariadb ------------------------------------------ 13.09s
+2018-04-28 14:39:24,125 p=3406 u=root |  Environment : set hostname --------------------------------------------- 11.31s
+2018-04-28 14:39:24,126 p=3406 u=root |  Environment : install Memcached ----------------------------------------- 7.59s
+2018-04-28 14:39:24,126 p=3406 u=root |  Environment : start rabbitmq-server ------------------------------------- 7.13s
+2018-04-28 14:39:24,126 p=3406 u=root |  Environment : useradd openstack ----------------------------------------- 6.00s
+2018-04-28 14:39:24,127 p=3406 u=root |  Environment : install expect -------------------------------------------- 4.80s
+2018-04-28 14:39:24,127 p=3406 u=root |  Environment : install centos-release-openstack-newton ------------------- 3.25s
+2018-04-28 14:39:24,127 p=3406 u=root |  Environment : restart NTP ----------------------------------------------- 1.91s
+2018-04-28 14:39:24,128 p=3406 u=root |  Environment : add mariadb_openstack.cnf file ---------------------------- 1.49s
+2018-04-28 14:39:24,128 p=3406 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 1.49s
+2018-04-28 14:39:24,128 p=3406 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.33s
+2018-04-28 14:39:24,129 p=3406 u=root |  Environment : restart memcached ----------------------------------------- 1.05s
+2018-04-28 14:39:24,129 p=3406 u=root |  Environment : copy file ------------------------------------------------- 0.94s
+2018-04-28 14:39:24,129 p=3406 u=root |  Identity : create keystone database ------------------------------------- 0.84s
+2018-04-28 14:42:53,971 p=3791 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:42:54,025 p=3791 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:42:54,025 p=3791 u=root |  Saturday 28 April 2018  14:42:54 +0800 (0:00:00.059)       0:00:00.060 ******** 
+2018-04-28 14:43:05,879 p=3791 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 14:43:05,883 p=3791 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 14:43:05,884 p=3791 u=root |  Saturday 28 April 2018  14:43:05 +0800 (0:00:11.858)       0:00:11.918 ******** 
+2018-04-28 14:43:06,634 p=3791 u=root |  fatal: [controller]: FAILED! => {"changed": false, "failed": true, "msg": "unable to find /root/.my.cnf. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: NO)\")"}
+2018-04-28 14:43:06,639 p=3791 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 14:43:06,639 p=3791 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 14:43:06,640 p=3791 u=root |  controller                 : ok=1    changed=0    unreachable=0    failed=1   
+2018-04-28 14:43:06,641 p=3791 u=root |  Saturday 28 April 2018  14:43:06 +0800 (0:00:00.756)       0:00:12.675 ******** 
+2018-04-28 14:43:06,641 p=3791 u=root |  =============================================================================== 
+2018-04-28 14:43:06,641 p=3791 u=root |  Identity : install depends --------------------------------------------- 11.86s
+2018-04-28 14:43:06,642 p=3791 u=root |  Identity : create keystone database ------------------------------------- 0.76s
+2018-04-28 14:46:20,334 p=3844 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:46:20,386 p=3844 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:46:20,386 p=3844 u=root |  Saturday 28 April 2018  14:46:20 +0800 (0:00:00.057)       0:00:00.057 ******** 
+2018-04-28 14:46:31,714 p=3844 u=root |   [ERROR]: User interrupted execution
+
+2018-04-28 14:46:59,650 p=3875 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:46:59,702 p=3875 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:46:59,702 p=3875 u=root |  Saturday 28 April 2018  14:46:59 +0800 (0:00:00.057)       0:00:00.057 ******** 
+2018-04-28 14:47:00,984 p=3875 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 14:47:00,988 p=3875 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 14:47:00,988 p=3875 u=root |  Saturday 28 April 2018  14:47:00 +0800 (0:00:01.286)       0:00:01.343 ******** 
+2018-04-28 14:47:01,755 p=3875 u=root |  fatal: [controller]: FAILED! => {"changed": false, "failed": true, "msg": "unable to find /root/.my.cnf. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: NO)\")"}
+2018-04-28 14:47:01,758 p=3875 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 14:47:01,759 p=3875 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 14:47:01,759 p=3875 u=root |  controller                 : ok=1    changed=0    unreachable=0    failed=1   
+2018-04-28 14:47:01,760 p=3875 u=root |  Saturday 28 April 2018  14:47:01 +0800 (0:00:00.771)       0:00:02.114 ******** 
+2018-04-28 14:47:01,760 p=3875 u=root |  =============================================================================== 
+2018-04-28 14:47:01,760 p=3875 u=root |  Identity : install depends ---------------------------------------------- 1.29s
+2018-04-28 14:47:01,761 p=3875 u=root |  Identity : create keystone database ------------------------------------- 0.77s
+2018-04-28 14:51:12,952 p=3936 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:51:13,008 p=3936 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:51:13,009 p=3936 u=root |  Saturday 28 April 2018  14:51:13 +0800 (0:00:00.061)       0:00:00.062 ******** 
+2018-04-28 14:51:24,699 p=3936 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 14:51:24,708 p=3936 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 14:51:24,709 p=3936 u=root |  Saturday 28 April 2018  14:51:24 +0800 (0:00:11.700)       0:00:11.762 ******** 
+2018-04-28 14:51:25,468 p=3936 u=root |  changed: [controller]
+2018-04-28 14:51:25,472 p=3936 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 14:51:25,473 p=3936 u=root |  Saturday 28 April 2018  14:51:25 +0800 (0:00:00.763)       0:00:12.525 ******** 
+2018-04-28 14:51:26,306 p=3936 u=root |  changed: [controller] => (item=localhost)
+2018-04-28 14:51:26,743 p=3936 u=root |  changed: [controller] => (item=%)
+2018-04-28 14:51:26,748 p=3936 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 14:51:26,749 p=3936 u=root |  Saturday 28 April 2018  14:51:26 +0800 (0:00:01.276)       0:00:13.801 ******** 
+2018-04-28 14:51:36,519 p=3936 u=root |   [ERROR]: User interrupted execution
+
+2018-04-28 14:51:39,369 p=3970 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 14:51:39,422 p=3970 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 14:51:39,422 p=3970 u=root |  Saturday 28 April 2018  14:51:39 +0800 (0:00:00.058)       0:00:00.058 ******** 
+2018-04-28 14:51:41,078 p=3970 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 14:51:41,084 p=3970 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 14:51:41,085 p=3970 u=root |  Saturday 28 April 2018  14:51:41 +0800 (0:00:01.662)       0:00:01.721 ******** 
+2018-04-28 14:51:41,976 p=3970 u=root |  changed: [controller]
+2018-04-28 14:51:41,981 p=3970 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 14:51:41,982 p=3970 u=root |  Saturday 28 April 2018  14:51:41 +0800 (0:00:00.896)       0:00:02.618 ******** 
+2018-04-28 14:51:42,770 p=3970 u=root |  ok: [controller] => (item=localhost)
+2018-04-28 14:51:43,161 p=3970 u=root |  ok: [controller] => (item=%)
+2018-04-28 14:51:43,171 p=3970 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 14:51:43,172 p=3970 u=root |  Saturday 28 April 2018  14:51:43 +0800 (0:00:01.190)       0:00:03.808 ******** 
+2018-04-28 14:53:05,659 p=3970 u=root |  ok: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 14:53:05,665 p=3970 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 14:53:05,665 p=3970 u=root |  Saturday 28 April 2018  14:53:05 +0800 (0:01:22.493)       0:01:26.302 ******** 
+2018-04-28 14:53:06,487 p=3970 u=root |  changed: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^#connection ='})
+2018-04-28 14:53:06,879 p=3970 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^#provider = uuid'})
+2018-04-28 14:53:06,888 p=3970 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 14:53:06,888 p=3970 u=root |  Saturday 28 April 2018  14:53:06 +0800 (0:00:01.222)       0:01:27.524 ******** 
+2018-04-28 14:53:07,640 p=3970 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 14:53:07,644 p=3970 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 14:53:07,645 p=3970 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 14:53:07,645 p=3970 u=root |  controller                 : ok=5    changed=2    unreachable=0    failed=1   
+2018-04-28 14:53:07,646 p=3970 u=root |  Saturday 28 April 2018  14:53:07 +0800 (0:00:00.757)       0:01:28.282 ******** 
+2018-04-28 14:53:07,646 p=3970 u=root |  =============================================================================== 
+2018-04-28 14:53:07,647 p=3970 u=root |  Identity : Install packages -------------------------------------------- 82.49s
+2018-04-28 14:53:07,647 p=3970 u=root |  Identity : install depends ---------------------------------------------- 1.66s
+2018-04-28 14:53:07,647 p=3970 u=root |  Identity : modify the /etc/keystone/keystone.conf file ------------------ 1.22s
+2018-04-28 14:53:07,648 p=3970 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.19s
+2018-04-28 14:53:07,648 p=3970 u=root |  Identity : create keystone database ------------------------------------- 0.90s
+2018-04-28 14:53:07,648 p=3970 u=root |  Identity : populate the identity service -------------------------------- 0.76s
+2018-04-28 15:00:06,053 p=4171 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:00:06,154 p=4171 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:00:06,155 p=4171 u=root |  Saturday 28 April 2018  15:00:06 +0800 (0:00:00.110)       0:00:00.110 ******** 
+2018-04-28 15:00:17,096 p=4171 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:00:17,100 p=4171 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:00:17,100 p=4171 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:00:17,101 p=4171 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:00:17,101 p=4171 u=root |  Saturday 28 April 2018  15:00:17 +0800 (0:00:10.946)       0:00:11.057 ******** 
+2018-04-28 15:00:17,102 p=4171 u=root |  =============================================================================== 
+2018-04-28 15:00:17,102 p=4171 u=root |  Identity : populate the identity service ------------------------------- 10.95s
+2018-04-28 15:02:56,714 p=4231 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:02:56,817 p=4231 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 15:02:56,818 p=4231 u=root |  Saturday 28 April 2018  15:02:56 +0800 (0:00:00.114)       0:00:00.114 ******** 
+2018-04-28 15:03:07,705 p=4231 u=root |  changed: [controller]
+2018-04-28 15:03:07,711 p=4231 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 15:03:07,711 p=4231 u=root |  Saturday 28 April 2018  15:03:07 +0800 (0:00:10.893)       0:00:11.007 ******** 
+2018-04-28 15:03:08,564 p=4231 u=root |  ok: [controller] => (item=localhost)
+2018-04-28 15:03:08,995 p=4231 u=root |  ok: [controller] => (item=%)
+2018-04-28 15:03:08,999 p=4231 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:03:09,000 p=4231 u=root |  Saturday 28 April 2018  15:03:08 +0800 (0:00:01.288)       0:00:12.296 ******** 
+2018-04-28 15:03:09,687 p=4231 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:03:09,691 p=4231 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:03:09,692 p=4231 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:03:09,692 p=4231 u=root |  controller                 : ok=2    changed=1    unreachable=0    failed=1   
+2018-04-28 15:03:09,693 p=4231 u=root |  Saturday 28 April 2018  15:03:09 +0800 (0:00:00.692)       0:00:12.989 ******** 
+2018-04-28 15:03:09,693 p=4231 u=root |  =============================================================================== 
+2018-04-28 15:03:09,693 p=4231 u=root |  Identity : create keystone database ------------------------------------ 10.89s
+2018-04-28 15:03:09,694 p=4231 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.29s
+2018-04-28 15:03:09,694 p=4231 u=root |  Identity : populate the identity service -------------------------------- 0.69s
+2018-04-28 15:05:19,650 p=4276 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:05:19,719 p=4276 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:05:19,719 p=4276 u=root |  Saturday 28 April 2018  15:05:19 +0800 (0:00:00.075)       0:00:00.075 ******** 
+2018-04-28 15:05:30,467 p=4276 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:05:30,471 p=4276 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:05:30,471 p=4276 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:05:30,472 p=4276 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:05:30,473 p=4276 u=root |  Saturday 28 April 2018  15:05:30 +0800 (0:00:10.752)       0:00:10.828 ******** 
+2018-04-28 15:05:30,473 p=4276 u=root |  =============================================================================== 
+2018-04-28 15:05:30,473 p=4276 u=root |  Identity : populate the identity service ------------------------------- 10.75s
+2018-04-28 15:11:35,013 p=4309 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:11:35,062 p=4309 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:11:35,062 p=4309 u=root |  Saturday 28 April 2018  15:11:35 +0800 (0:00:00.053)       0:00:00.053 ******** 
+2018-04-28 15:11:45,752 p=4309 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:11:45,756 p=4309 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:11:45,756 p=4309 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:11:45,757 p=4309 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:11:45,757 p=4309 u=root |  Saturday 28 April 2018  15:11:45 +0800 (0:00:10.694)       0:00:10.748 ******** 
+2018-04-28 15:11:45,757 p=4309 u=root |  =============================================================================== 
+2018-04-28 15:11:45,758 p=4309 u=root |  Identity : populate the identity service ------------------------------- 10.70s
+2018-04-28 15:15:20,748 p=4327 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:15:20,853 p=4327 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:15:20,854 p=4327 u=root |  Saturday 28 April 2018  15:15:20 +0800 (0:00:00.116)       0:00:00.117 ******** 
+2018-04-28 15:15:31,693 p=4327 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:15:31,697 p=4327 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:15:31,698 p=4327 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:15:31,698 p=4327 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:15:31,699 p=4327 u=root |  Saturday 28 April 2018  15:15:31 +0800 (0:00:10.844)       0:00:10.961 ******** 
+2018-04-28 15:15:31,699 p=4327 u=root |  =============================================================================== 
+2018-04-28 15:15:31,699 p=4327 u=root |  Identity : populate the identity service ------------------------------- 10.84s
+2018-04-28 15:17:59,245 p=4347 u=root |  Using /root/openstack/openstack-ansible/playbooks/ansible.cfg as config file
+2018-04-28 15:17:59,374 p=4347 u=root |  statically included: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml
+2018-04-28 15:17:59,393 p=4347 u=root |  statically included: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/create_user.yml
+2018-04-28 15:17:59,426 p=4347 u=root |  PLAYBOOK: openstack.yml ********************************************************
+2018-04-28 15:17:59,427 p=4347 u=root |  1 plays in openstack.yml
+2018-04-28 15:17:59,430 p=4347 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:17:59,517 p=4347 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:17:59,518 p=4347 u=root |  task path: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml:33
+2018-04-28 15:17:59,518 p=4347 u=root |  Saturday 28 April 2018  15:17:59 +0800 (0:00:00.095)       0:00:00.096 ******** 
+2018-04-28 15:17:59,919 p=4347 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/core/commands/command.py
+2018-04-28 15:18:10,462 p=4347 u=root |  fatal: [controller]: FAILED! => {
+    "changed": false, 
+    "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", 
+    "failed": true, 
+    "failed_when_result": true, 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "su-s /bin/sh -c \"keystone-manage db_sync\" keystone", 
+            "_uses_shell": false, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "warn": true
+        }, 
+        "module_name": "command"
+    }, 
+    "msg": "[Errno 2] No such file or directory", 
+    "rc": 2
+}
+2018-04-28 15:18:10,467 p=4347 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:18:10,467 p=4347 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:18:10,468 p=4347 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:18:10,468 p=4347 u=root |  Saturday 28 April 2018  15:18:10 +0800 (0:00:10.949)       0:00:11.045 ******** 
+2018-04-28 15:18:10,469 p=4347 u=root |  =============================================================================== 
+2018-04-28 15:18:10,469 p=4347 u=root |  Identity : populate the identity service ------------------------------- 10.95s
+/root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml:33 ---
+2018-04-28 15:25:42,714 p=4383 u=root |  Using /root/openstack/openstack-ansible/playbooks/ansible.cfg as config file
+2018-04-28 15:25:42,792 p=4383 u=root |  statically included: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml
+2018-04-28 15:25:42,803 p=4383 u=root |  statically included: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/create_user.yml
+2018-04-28 15:25:42,823 p=4383 u=root |  PLAYBOOK: openstack.yml ********************************************************
+2018-04-28 15:25:42,824 p=4383 u=root |  1 plays in openstack.yml
+2018-04-28 15:25:42,826 p=4383 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:25:42,874 p=4383 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:25:42,874 p=4383 u=root |  task path: /root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml:33
+2018-04-28 15:25:42,874 p=4383 u=root |  Saturday 28 April 2018  15:25:42 +0800 (0:00:00.053)       0:00:00.053 ******** 
+2018-04-28 15:25:43,080 p=4383 u=root |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/core/commands/command.py
+2018-04-28 15:25:53,613 p=4383 u=root |  fatal: [controller]: FAILED! => {
+    "changed": false, 
+    "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", 
+    "failed": true, 
+    "failed_when_result": true, 
+    "invocation": {
+        "module_args": {
+            "_raw_params": "su-s /bin/sh -c \"keystone-manage db_sync\" keystone", 
+            "_uses_shell": false, 
+            "chdir": null, 
+            "creates": null, 
+            "executable": null, 
+            "removes": null, 
+            "warn": true
+        }, 
+        "module_name": "command"
+    }, 
+    "msg": "[Errno 2] No such file or directory", 
+    "rc": 2
+}
+2018-04-28 15:25:53,618 p=4383 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:25:53,618 p=4383 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:25:53,619 p=4383 u=root |  controller                 : ok=0    changed=0    unreachable=0    failed=1   
+2018-04-28 15:25:53,620 p=4383 u=root |  Saturday 28 April 2018  15:25:53 +0800 (0:00:10.745)       0:00:10.798 ******** 
+2018-04-28 15:25:53,620 p=4383 u=root |  =============================================================================== 
+2018-04-28 15:25:53,620 p=4383 u=root |  Identity : populate the identity service ------------------------------- 10.75s
+/root/openstack/openstack-ansible/playbooks/roles/Identity/tasks/sql.yml:33 ---
+2018-04-28 15:34:20,278 p=4601 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 15:34:20,343 p=4601 u=root |  TASK [Environment : set hostname] **********************************************
+2018-04-28 15:34:20,343 p=4601 u=root |  Saturday 28 April 2018  15:34:20 +0800 (0:00:00.068)       0:00:00.068 ******** 
+2018-04-28 15:34:36,678 p=4601 u=root |  changed: [controller]
+2018-04-28 15:34:36,684 p=4601 u=root |  TASK [Environment : add host file] *********************************************
+2018-04-28 15:34:36,685 p=4601 u=root |  Saturday 28 April 2018  15:34:36 +0800 (0:00:16.341)       0:00:16.410 ******** 
+2018-04-28 15:34:37,461 p=4601 u=root |  changed: [controller]
+2018-04-28 15:34:37,466 p=4601 u=root |  TASK [Environment : install chrony] ********************************************
+2018-04-28 15:34:37,466 p=4601 u=root |  Saturday 28 April 2018  15:34:37 +0800 (0:00:00.781)       0:00:17.192 ******** 
+2018-04-28 15:35:04,046 p=4601 u=root |  changed: [controller]
+2018-04-28 15:35:04,053 p=4601 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 15:35:04,055 p=4601 u=root |  Saturday 28 April 2018  15:35:04 +0800 (0:00:26.587)       0:00:43.780 ******** 
+2018-04-28 15:35:04,480 p=4601 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 15:35:04,807 p=4601 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 15:35:05,155 p=4601 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 15:35:05,497 p=4601 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 15:35:05,503 p=4601 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 15:35:05,504 p=4601 u=root |  Saturday 28 April 2018  15:35:05 +0800 (0:00:01.448)       0:00:45.229 ******** 
+2018-04-28 15:35:05,874 p=4601 u=root |  changed: [controller]
+2018-04-28 15:35:05,881 p=4601 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-04-28 15:35:05,881 p=4601 u=root |  Saturday 28 April 2018  15:35:05 +0800 (0:00:00.377)       0:00:45.607 ******** 
+2018-04-28 15:35:07,791 p=4601 u=root |  changed: [controller]
+2018-04-28 15:35:07,796 p=4601 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-04-28 15:35:07,796 p=4601 u=root |  Saturday 28 April 2018  15:35:07 +0800 (0:00:01.914)       0:00:47.521 ******** 
+2018-04-28 15:35:17,101 p=4601 u=root |  changed: [controller]
+2018-04-28 15:35:17,106 p=4601 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-04-28 15:35:17,107 p=4601 u=root |  Saturday 28 April 2018  15:35:17 +0800 (0:00:09.310)       0:00:56.832 ******** 
+2018-04-28 15:42:28,595 p=4601 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-04-28 15:42:28,601 p=4601 u=root |  TASK [Environment : install sql] ***********************************************
+2018-04-28 15:42:28,601 p=4601 u=root |  Saturday 28 April 2018  15:42:28 +0800 (0:07:11.494)       0:08:08.327 ******** 
+2018-04-28 15:46:46,699 p=4601 u=root |  changed: [controller] => (item=[u'mariadb', u'mariadb-server', u'python2-PyMySQL'])
+2018-04-28 15:46:46,705 p=4601 u=root |  TASK [Environment : add mariadb_openstack.cnf file] ****************************
+2018-04-28 15:46:46,705 p=4601 u=root |  Saturday 28 April 2018  15:46:46 +0800 (0:04:18.104)       0:12:26.431 ******** 
+2018-04-28 15:46:48,224 p=4601 u=root |  changed: [controller]
+2018-04-28 15:46:48,229 p=4601 u=root |  TASK [Environment : install expect] ********************************************
+2018-04-28 15:46:48,230 p=4601 u=root |  Saturday 28 April 2018  15:46:48 +0800 (0:00:01.524)       0:12:27.955 ******** 
+2018-04-28 15:46:59,111 p=4601 u=root |  changed: [controller]
+2018-04-28 15:46:59,115 p=4601 u=root |  TASK [Environment : copy file] *************************************************
+2018-04-28 15:46:59,116 p=4601 u=root |  Saturday 28 April 2018  15:46:59 +0800 (0:00:10.885)       0:12:38.841 ******** 
+2018-04-28 15:47:00,017 p=4601 u=root |  changed: [controller]
+2018-04-28 15:47:00,021 p=4601 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-04-28 15:47:00,022 p=4601 u=root |  Saturday 28 April 2018  15:47:00 +0800 (0:00:00.905)       0:12:39.747 ******** 
+2018-04-28 15:48:20,928 p=4601 u=root |  changed: [controller]
+2018-04-28 15:48:20,933 p=4601 u=root |  TASK [Environment : restart mariadb] *******************************************
+2018-04-28 15:48:20,933 p=4601 u=root |  Saturday 28 April 2018  15:48:20 +0800 (0:01:20.911)       0:14:00.659 ******** 
+2018-04-28 15:48:34,125 p=4601 u=root |  changed: [controller]
+2018-04-28 15:48:34,130 p=4601 u=root |  TASK [Environment : install rabbitmq] ******************************************
+2018-04-28 15:48:34,130 p=4601 u=root |  Saturday 28 April 2018  15:48:34 +0800 (0:00:13.196)       0:14:13.856 ******** 
+2018-04-28 15:49:53,904 p=4601 u=root |  changed: [controller]
+2018-04-28 15:49:53,908 p=4601 u=root |  TASK [Environment : start rabbitmq-server] *************************************
+2018-04-28 15:49:53,909 p=4601 u=root |  Saturday 28 April 2018  15:49:53 +0800 (0:01:19.778)       0:15:33.634 ******** 
+2018-04-28 15:50:00,010 p=4601 u=root |  changed: [controller]
+2018-04-28 15:50:00,015 p=4601 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 15:50:00,015 p=4601 u=root |  Saturday 28 April 2018  15:50:00 +0800 (0:00:06.106)       0:15:39.740 ******** 
+2018-04-28 15:50:05,622 p=4601 u=root |  changed: [controller]
+2018-04-28 15:50:05,626 p=4601 u=root |  TASK [Environment : install Memcached] *****************************************
+2018-04-28 15:50:05,627 p=4601 u=root |  Saturday 28 April 2018  15:50:05 +0800 (0:00:05.611)       0:15:45.352 ******** 
+2018-04-28 15:50:16,351 p=4601 u=root |  changed: [controller] => (item=[u'memcached', u'python-memcached'])
+2018-04-28 15:50:16,356 p=4601 u=root |  TASK [Environment : modify the /etc/sysconfig/memcached file] ******************
+2018-04-28 15:50:16,356 p=4601 u=root |  Saturday 28 April 2018  15:50:16 +0800 (0:00:10.729)       0:15:56.082 ******** 
+2018-04-28 15:50:16,750 p=4601 u=root |  changed: [controller]
+2018-04-28 15:50:16,754 p=4601 u=root |  TASK [Environment : restart memcached] *****************************************
+2018-04-28 15:50:16,754 p=4601 u=root |  Saturday 28 April 2018  15:50:16 +0800 (0:00:00.398)       0:15:56.480 ******** 
+2018-04-28 15:50:17,776 p=4601 u=root |  changed: [controller]
+2018-04-28 15:50:17,780 p=4601 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 15:50:17,780 p=4601 u=root |  Saturday 28 April 2018  15:50:17 +0800 (0:00:01.025)       0:15:57.506 ******** 
+2018-04-28 15:50:35,954 p=4601 u=root |  changed: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 15:50:35,963 p=4601 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 15:50:35,964 p=4601 u=root |  Saturday 28 April 2018  15:50:35 +0800 (0:00:18.183)       0:16:15.689 ******** 
+2018-04-28 15:50:36,709 p=4601 u=root |  changed: [controller]
+2018-04-28 15:50:36,714 p=4601 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 15:50:36,715 p=4601 u=root |  Saturday 28 April 2018  15:50:36 +0800 (0:00:00.751)       0:16:16.440 ******** 
+2018-04-28 15:50:37,512 p=4601 u=root |  changed: [controller] => (item=localhost)
+2018-04-28 15:50:37,926 p=4601 u=root |  changed: [controller] => (item=%)
+2018-04-28 15:50:37,930 p=4601 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 15:50:37,931 p=4601 u=root |  Saturday 28 April 2018  15:50:37 +0800 (0:00:01.216)       0:16:17.656 ******** 
+2018-04-28 15:51:13,900 p=4601 u=root |  changed: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 15:51:13,908 p=4601 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 15:51:13,909 p=4601 u=root |  Saturday 28 April 2018  15:51:13 +0800 (0:00:35.977)       0:16:53.634 ******** 
+2018-04-28 15:51:14,403 p=4601 u=root |  changed: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^#connection ='})
+2018-04-28 15:51:14,776 p=4601 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^#provider = uuid'})
+2018-04-28 15:51:14,780 p=4601 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 15:51:14,781 p=4601 u=root |  Saturday 28 April 2018  15:51:14 +0800 (0:00:00.871)       0:16:54.506 ******** 
+2018-04-28 15:51:15,265 p=4601 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 15:51:15,270 p=4601 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 15:51:15,270 p=4601 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 15:51:15,271 p=4601 u=root |  controller                 : ok=25   changed=25   unreachable=0    failed=1   
+2018-04-28 15:51:15,271 p=4601 u=root |  Saturday 28 April 2018  15:51:15 +0800 (0:00:00.490)       0:16:54.997 ******** 
+2018-04-28 15:51:15,272 p=4601 u=root |  =============================================================================== 
+2018-04-28 15:51:15,272 p=4601 u=root |  Environment : start openstack storehouse and install openstack client,openstack-selinux - 431.49s
+2018-04-28 15:51:15,273 p=4601 u=root |  Environment : install sql --------------------------------------------- 258.10s
+2018-04-28 15:51:15,273 p=4601 u=root |  Environment : expect the mysql_secure_installation.exp ----------------- 80.91s
+2018-04-28 15:51:15,273 p=4601 u=root |  Environment : install rabbitmq ----------------------------------------- 79.78s
+2018-04-28 15:51:15,274 p=4601 u=root |  Identity : Install packages -------------------------------------------- 35.98s
+2018-04-28 15:51:15,274 p=4601 u=root |  Environment : install chrony ------------------------------------------- 26.59s
+2018-04-28 15:51:15,274 p=4601 u=root |  Identity : install depends --------------------------------------------- 18.18s
+2018-04-28 15:51:15,274 p=4601 u=root |  Environment : set hostname --------------------------------------------- 16.34s
+2018-04-28 15:51:15,275 p=4601 u=root |  Environment : restart mariadb ------------------------------------------ 13.20s
+2018-04-28 15:51:15,275 p=4601 u=root |  Environment : install expect ------------------------------------------- 10.89s
+2018-04-28 15:51:15,275 p=4601 u=root |  Environment : install Memcached ---------------------------------------- 10.73s
+2018-04-28 15:51:15,276 p=4601 u=root |  Environment : install centos-release-openstack-newton ------------------- 9.31s
+2018-04-28 15:51:15,276 p=4601 u=root |  Environment : start rabbitmq-server ------------------------------------- 6.11s
+2018-04-28 15:51:15,276 p=4601 u=root |  Environment : useradd openstack ----------------------------------------- 5.61s
+2018-04-28 15:51:15,277 p=4601 u=root |  Environment : restart NTP ----------------------------------------------- 1.91s
+2018-04-28 15:51:15,277 p=4601 u=root |  Environment : add mariadb_openstack.cnf file ---------------------------- 1.52s
+2018-04-28 15:51:15,277 p=4601 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 1.45s
+2018-04-28 15:51:15,278 p=4601 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.22s
+2018-04-28 15:51:15,278 p=4601 u=root |  Environment : restart memcached ----------------------------------------- 1.03s
+2018-04-28 15:51:15,278 p=4601 u=root |  Environment : copy file ------------------------------------------------- 0.91s
+2018-04-28 16:00:04,322 p=4916 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 16:00:04,371 p=4916 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 16:00:04,371 p=4916 u=root |  Saturday 28 April 2018  16:00:04 +0800 (0:00:00.053)       0:00:00.053 ******** 
+2018-04-28 16:00:06,002 p=4916 u=root |   [ERROR]: User interrupted execution
+
+2018-04-28 16:00:45,257 p=4933 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 16:00:45,305 p=4933 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 16:00:45,306 p=4933 u=root |  Saturday 28 April 2018  16:00:45 +0800 (0:00:00.052)       0:00:00.052 ******** 
+2018-04-28 16:00:56,768 p=4933 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 16:00:56,774 p=4933 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 16:00:56,774 p=4933 u=root |  Saturday 28 April 2018  16:00:56 +0800 (0:00:11.468)       0:00:11.520 ******** 
+2018-04-28 16:00:57,630 p=4933 u=root |  changed: [controller]
+2018-04-28 16:00:57,634 p=4933 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 16:00:57,634 p=4933 u=root |  Saturday 28 April 2018  16:00:57 +0800 (0:00:00.860)       0:00:12.380 ******** 
+2018-04-28 16:00:58,411 p=4933 u=root |  failed: [controller] (item=localhost) => {"failed": true, "item": "localhost", "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: YES)\")"}
+2018-04-28 16:00:58,791 p=4933 u=root |  failed: [controller] (item=%) => {"failed": true, "item": "%", "msg": "unable to connect to database, check login_user and login_password are correct or /root/.my.cnf has the credentials. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: YES)\")"}
+2018-04-28 16:00:58,795 p=4933 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 16:00:58,795 p=4933 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 16:00:58,796 p=4933 u=root |  controller                 : ok=2    changed=1    unreachable=0    failed=1   
+2018-04-28 16:00:58,796 p=4933 u=root |  Saturday 28 April 2018  16:00:58 +0800 (0:00:01.161)       0:00:13.542 ******** 
+2018-04-28 16:00:58,797 p=4933 u=root |  =============================================================================== 
+2018-04-28 16:00:58,797 p=4933 u=root |  Identity : install depends --------------------------------------------- 11.47s
+2018-04-28 16:00:58,797 p=4933 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.16s
+2018-04-28 16:00:58,798 p=4933 u=root |  Identity : create keystone database ------------------------------------- 0.86s
+2018-04-28 16:01:53,794 p=5006 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 16:01:53,842 p=5006 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 16:01:53,842 p=5006 u=root |  Saturday 28 April 2018  16:01:53 +0800 (0:00:00.052)       0:00:00.052 ******** 
+2018-04-28 16:01:55,182 p=5006 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 16:01:55,186 p=5006 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 16:01:55,187 p=5006 u=root |  Saturday 28 April 2018  16:01:55 +0800 (0:00:01.344)       0:00:01.397 ******** 
+2018-04-28 16:01:55,963 p=5006 u=root |  changed: [controller]
+2018-04-28 16:01:55,966 p=5006 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 16:01:55,967 p=5006 u=root |  Saturday 28 April 2018  16:01:55 +0800 (0:00:00.779)       0:00:02.177 ******** 
+2018-04-28 16:01:56,719 p=5006 u=root |  ok: [controller] => (item=localhost)
+2018-04-28 16:01:57,144 p=5006 u=root |  ok: [controller] => (item=%)
+2018-04-28 16:01:57,152 p=5006 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 16:01:57,153 p=5006 u=root |  Saturday 28 April 2018  16:01:57 +0800 (0:00:01.185)       0:00:03.363 ******** 
+2018-04-28 16:01:57,810 p=5006 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 16:01:57,815 p=5006 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 16:01:57,815 p=5006 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 16:01:57,816 p=5006 u=root |  controller                 : ok=3    changed=1    unreachable=0    failed=1   
+2018-04-28 16:01:57,816 p=5006 u=root |  Saturday 28 April 2018  16:01:57 +0800 (0:00:00.663)       0:00:04.026 ******** 
+2018-04-28 16:01:57,816 p=5006 u=root |  =============================================================================== 
+2018-04-28 16:01:57,817 p=5006 u=root |  Identity : install depends ---------------------------------------------- 1.34s
+2018-04-28 16:01:57,817 p=5006 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.19s
+2018-04-28 16:01:57,817 p=5006 u=root |  Identity : create keystone database ------------------------------------- 0.78s
+2018-04-28 16:01:57,818 p=5006 u=root |  Identity : populate the identity service -------------------------------- 0.66s
+2018-04-28 17:05:14,917 p=5306 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 17:05:14,991 p=5306 u=root |  TASK [Environment : set hostname] **********************************************
+2018-04-28 17:05:14,991 p=5306 u=root |  Saturday 28 April 2018  17:05:14 +0800 (0:00:00.082)       0:00:00.082 ******** 
+2018-04-28 17:05:26,522 p=5306 u=root |  changed: [controller]
+2018-04-28 17:05:26,527 p=5306 u=root |  TASK [Environment : add host file] *********************************************
+2018-04-28 17:05:26,528 p=5306 u=root |  Saturday 28 April 2018  17:05:26 +0800 (0:00:11.536)       0:00:11.618 ******** 
+2018-04-28 17:05:27,252 p=5306 u=root |  changed: [controller]
+2018-04-28 17:05:27,257 p=5306 u=root |  TASK [Environment : install chrony] ********************************************
+2018-04-28 17:05:27,258 p=5306 u=root |  Saturday 28 April 2018  17:05:27 +0800 (0:00:00.729)       0:00:12.348 ******** 
+2018-04-28 17:05:50,232 p=5306 u=root |  changed: [controller]
+2018-04-28 17:05:50,236 p=5306 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 17:05:50,237 p=5306 u=root |  Saturday 28 April 2018  17:05:50 +0800 (0:00:22.979)       0:00:35.327 ******** 
+2018-04-28 17:05:50,697 p=5306 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:05:51,056 p=5306 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:05:51,409 p=5306 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:05:51,730 p=5306 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:05:51,737 p=5306 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 17:05:51,738 p=5306 u=root |  Saturday 28 April 2018  17:05:51 +0800 (0:00:01.501)       0:00:36.828 ******** 
+2018-04-28 17:05:52,166 p=5306 u=root |  changed: [controller]
+2018-04-28 17:05:52,170 p=5306 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-04-28 17:05:52,171 p=5306 u=root |  Saturday 28 April 2018  17:05:52 +0800 (0:00:00.432)       0:00:37.261 ******** 
+2018-04-28 17:05:54,143 p=5306 u=root |  changed: [controller]
+2018-04-28 17:05:54,149 p=5306 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-04-28 17:05:54,150 p=5306 u=root |  Saturday 28 April 2018  17:05:54 +0800 (0:00:01.978)       0:00:39.240 ******** 
+2018-04-28 17:06:03,021 p=5306 u=root |  changed: [controller]
+2018-04-28 17:06:03,025 p=5306 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-04-28 17:06:03,026 p=5306 u=root |  Saturday 28 April 2018  17:06:03 +0800 (0:00:08.876)       0:00:48.116 ******** 
+2018-04-28 17:12:16,525 p=5306 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-04-28 17:12:16,533 p=5306 u=root |  TASK [Environment : install sql] ***********************************************
+2018-04-28 17:12:16,533 p=5306 u=root |  Saturday 28 April 2018  17:12:16 +0800 (0:06:13.507)       0:07:01.624 ******** 
+2018-04-28 17:14:07,606 p=5306 u=root |  changed: [controller] => (item=[u'mariadb', u'mariadb-server', u'python2-PyMySQL'])
+2018-04-28 17:14:07,614 p=5306 u=root |  TASK [Environment : add mariadb_openstack.cnf file] ****************************
+2018-04-28 17:14:07,615 p=5306 u=root |  Saturday 28 April 2018  17:14:07 +0800 (0:01:51.081)       0:08:52.705 ******** 
+2018-04-28 17:14:09,087 p=5306 u=root |  changed: [controller]
+2018-04-28 17:14:09,091 p=5306 u=root |  TASK [Environment : install expect] ********************************************
+2018-04-28 17:14:09,092 p=5306 u=root |  Saturday 28 April 2018  17:14:09 +0800 (0:00:01.477)       0:08:54.182 ******** 
+2018-04-28 17:14:14,040 p=5306 u=root |  changed: [controller]
+2018-04-28 17:14:14,046 p=5306 u=root |  TASK [Environment : copy file] *************************************************
+2018-04-28 17:14:14,047 p=5306 u=root |  Saturday 28 April 2018  17:14:14 +0800 (0:00:04.954)       0:08:59.137 ******** 
+2018-04-28 17:14:14,932 p=5306 u=root |  changed: [controller]
+2018-04-28 17:14:14,939 p=5306 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-04-28 17:14:14,940 p=5306 u=root |  Saturday 28 April 2018  17:14:14 +0800 (0:00:00.892)       0:09:00.030 ******** 
+2018-04-28 17:15:35,847 p=5306 u=root |  changed: [controller]
+2018-04-28 17:15:35,852 p=5306 u=root |  TASK [Environment : restart mariadb] *******************************************
+2018-04-28 17:15:35,853 p=5306 u=root |  Saturday 28 April 2018  17:15:35 +0800 (0:01:20.913)       0:10:20.944 ******** 
+2018-04-28 17:15:49,271 p=5306 u=root |  changed: [controller]
+2018-04-28 17:15:49,275 p=5306 u=root |  TASK [Environment : install rabbitmq] ******************************************
+2018-04-28 17:15:49,276 p=5306 u=root |  Saturday 28 April 2018  17:15:49 +0800 (0:00:13.422)       0:10:34.366 ******** 
+2018-04-28 17:17:04,267 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:04,273 p=5306 u=root |  TASK [Environment : start rabbitmq-server] *************************************
+2018-04-28 17:17:04,274 p=5306 u=root |  Saturday 28 April 2018  17:17:04 +0800 (0:01:14.998)       0:11:49.364 ******** 
+2018-04-28 17:17:10,156 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:10,162 p=5306 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 17:17:10,162 p=5306 u=root |  Saturday 28 April 2018  17:17:10 +0800 (0:00:05.888)       0:11:55.253 ******** 
+2018-04-28 17:17:13,378 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:13,383 p=5306 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 17:17:13,384 p=5306 u=root |  Saturday 28 April 2018  17:17:13 +0800 (0:00:03.221)       0:11:58.474 ******** 
+2018-04-28 17:17:16,537 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:16,542 p=5306 u=root |  TASK [Environment : install Memcached] *****************************************
+2018-04-28 17:17:16,542 p=5306 u=root |  Saturday 28 April 2018  17:17:16 +0800 (0:00:03.158)       0:12:01.633 ******** 
+2018-04-28 17:17:23,334 p=5306 u=root |  changed: [controller] => (item=[u'memcached', u'python-memcached'])
+2018-04-28 17:17:23,338 p=5306 u=root |  TASK [Environment : modify the /etc/sysconfig/memcached file] ******************
+2018-04-28 17:17:23,339 p=5306 u=root |  Saturday 28 April 2018  17:17:23 +0800 (0:00:06.796)       0:12:08.429 ******** 
+2018-04-28 17:17:23,736 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:23,742 p=5306 u=root |  TASK [Environment : restart memcached] *****************************************
+2018-04-28 17:17:23,742 p=5306 u=root |  Saturday 28 April 2018  17:17:23 +0800 (0:00:00.403)       0:12:08.833 ******** 
+2018-04-28 17:17:24,818 p=5306 u=root |  changed: [controller]
+2018-04-28 17:17:24,822 p=5306 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 17:17:24,823 p=5306 u=root |  Saturday 28 April 2018  17:17:24 +0800 (0:00:01.080)       0:12:09.913 ******** 
+2018-04-28 17:17:57,515 p=5306 u=root |  changed: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 17:17:57,519 p=5306 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 17:17:57,519 p=5306 u=root |  Saturday 28 April 2018  17:17:57 +0800 (0:00:32.696)       0:12:42.610 ******** 
+2018-04-28 17:17:58,396 p=5306 u=root |  fatal: [controller]: FAILED! => {"changed": false, "failed": true, "msg": "unable to find /root/.my.cnf. Exception message: (1045, \"Access denied for user 'root'@'localhost' (using password: YES)\")"}
+2018-04-28 17:17:58,400 p=5306 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 17:17:58,400 p=5306 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 17:17:58,401 p=5306 u=root |  controller                 : ok=22   changed=22   unreachable=0    failed=1   
+2018-04-28 17:17:58,401 p=5306 u=root |  Saturday 28 April 2018  17:17:58 +0800 (0:00:00.881)       0:12:43.492 ******** 
+2018-04-28 17:17:58,401 p=5306 u=root |  =============================================================================== 
+2018-04-28 17:17:58,402 p=5306 u=root |  Environment : start openstack storehouse and install openstack client,openstack-selinux - 373.51s
+2018-04-28 17:17:58,403 p=5306 u=root |  Environment : install sql --------------------------------------------- 111.08s
+2018-04-28 17:17:58,403 p=5306 u=root |  Environment : expect the mysql_secure_installation.exp ----------------- 80.91s
+2018-04-28 17:17:58,403 p=5306 u=root |  Environment : install rabbitmq ----------------------------------------- 75.00s
+2018-04-28 17:17:58,404 p=5306 u=root |  Identity : install depends --------------------------------------------- 32.70s
+2018-04-28 17:17:58,404 p=5306 u=root |  Environment : install chrony ------------------------------------------- 22.98s
+2018-04-28 17:17:58,404 p=5306 u=root |  Environment : restart mariadb ------------------------------------------ 13.42s
+2018-04-28 17:17:58,404 p=5306 u=root |  Environment : set hostname --------------------------------------------- 11.54s
+2018-04-28 17:17:58,405 p=5306 u=root |  Environment : install centos-release-openstack-newton ------------------- 8.88s
+2018-04-28 17:17:58,405 p=5306 u=root |  Environment : install Memcached ----------------------------------------- 6.80s
+2018-04-28 17:17:58,405 p=5306 u=root |  Environment : start rabbitmq-server ------------------------------------- 5.89s
+2018-04-28 17:17:58,406 p=5306 u=root |  Environment : install expect -------------------------------------------- 4.95s
+2018-04-28 17:17:58,406 p=5306 u=root |  Environment : useradd openstack ----------------------------------------- 3.22s
+2018-04-28 17:17:58,406 p=5306 u=root |  Environment : useradd openstack ----------------------------------------- 3.16s
+2018-04-28 17:17:58,407 p=5306 u=root |  Environment : restart NTP ----------------------------------------------- 1.98s
+2018-04-28 17:17:58,407 p=5306 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 1.50s
+2018-04-28 17:17:58,407 p=5306 u=root |  Environment : add mariadb_openstack.cnf file ---------------------------- 1.48s
+2018-04-28 17:17:58,408 p=5306 u=root |  Environment : restart memcached ----------------------------------------- 1.08s
+2018-04-28 17:17:58,408 p=5306 u=root |  Environment : copy file ------------------------------------------------- 0.89s
+2018-04-28 17:17:58,408 p=5306 u=root |  Identity : create keystone database ------------------------------------- 0.88s
+2018-04-28 17:25:48,329 p=5604 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 17:25:48,379 p=5604 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 17:25:48,379 p=5604 u=root |  Saturday 28 April 2018  17:25:48 +0800 (0:00:00.055)       0:00:00.055 ******** 
+2018-04-28 17:25:59,856 p=5604 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 17:25:59,860 p=5604 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 17:25:59,861 p=5604 u=root |  Saturday 28 April 2018  17:25:59 +0800 (0:00:11.481)       0:00:11.537 ******** 
+2018-04-28 17:26:00,580 p=5604 u=root |  changed: [controller]
+2018-04-28 17:26:00,584 p=5604 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 17:26:00,584 p=5604 u=root |  Saturday 28 April 2018  17:26:00 +0800 (0:00:00.723)       0:00:12.260 ******** 
+2018-04-28 17:26:01,341 p=5604 u=root |  changed: [controller] => (item=localhost)
+2018-04-28 17:26:01,713 p=5604 u=root |  changed: [controller] => (item=%)
+2018-04-28 17:26:01,717 p=5604 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 17:26:01,718 p=5604 u=root |  Saturday 28 April 2018  17:26:01 +0800 (0:00:01.133)       0:00:13.394 ******** 
+2018-04-28 17:26:57,054 p=5604 u=root |  changed: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 17:26:57,058 p=5604 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 17:26:57,059 p=5604 u=root |  Saturday 28 April 2018  17:26:57 +0800 (0:00:55.341)       0:01:08.735 ******** 
+2018-04-28 17:26:57,842 p=5604 u=root |  changed: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^#connection ='})
+2018-04-28 17:26:58,184 p=5604 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^#provider = uuid'})
+2018-04-28 17:26:58,190 p=5604 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 17:26:58,191 p=5604 u=root |  Saturday 28 April 2018  17:26:58 +0800 (0:00:01.131)       0:01:09.867 ******** 
+2018-04-28 17:26:58,895 p=5604 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "failed_when_result": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 17:26:58,899 p=5604 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 17:26:58,899 p=5604 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 17:26:58,900 p=5604 u=root |  controller                 : ok=5    changed=4    unreachable=0    failed=1   
+2018-04-28 17:26:58,900 p=5604 u=root |  Saturday 28 April 2018  17:26:58 +0800 (0:00:00.709)       0:01:10.576 ******** 
+2018-04-28 17:26:58,901 p=5604 u=root |  =============================================================================== 
+2018-04-28 17:26:58,901 p=5604 u=root |  Identity : Install packages -------------------------------------------- 55.34s
+2018-04-28 17:26:58,901 p=5604 u=root |  Identity : install depends --------------------------------------------- 11.48s
+2018-04-28 17:26:58,902 p=5604 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.13s
+2018-04-28 17:26:58,902 p=5604 u=root |  Identity : modify the /etc/keystone/keystone.conf file ------------------ 1.13s
+2018-04-28 17:26:58,902 p=5604 u=root |  Identity : create keystone database ------------------------------------- 0.72s
+2018-04-28 17:26:58,903 p=5604 u=root |  Identity : populate the identity service -------------------------------- 0.71s
+2018-04-28 17:44:55,616 p=5754 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 17:44:55,681 p=5754 u=root |  TASK [Environment : set hostname] **********************************************
+2018-04-28 17:44:55,682 p=5754 u=root |  Saturday 28 April 2018  17:44:55 +0800 (0:00:00.069)       0:00:00.069 ******** 
+2018-04-28 17:44:56,974 p=5754 u=root |  changed: [controller]
+2018-04-28 17:44:56,978 p=5754 u=root |  TASK [Environment : add host file] *********************************************
+2018-04-28 17:44:56,978 p=5754 u=root |  Saturday 28 April 2018  17:44:56 +0800 (0:00:01.296)       0:00:01.366 ******** 
+2018-04-28 17:44:57,778 p=5754 u=root |  changed: [controller]
+2018-04-28 17:44:57,782 p=5754 u=root |  TASK [Environment : install chrony] ********************************************
+2018-04-28 17:44:57,783 p=5754 u=root |  Saturday 28 April 2018  17:44:57 +0800 (0:00:00.804)       0:00:02.170 ******** 
+2018-04-28 17:45:19,141 p=5754 u=root |  changed: [controller]
+2018-04-28 17:45:19,148 p=5754 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 17:45:19,148 p=5754 u=root |  Saturday 28 April 2018  17:45:19 +0800 (0:00:21.365)       0:00:23.536 ******** 
+2018-04-28 17:45:19,653 p=5754 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:45:20,005 p=5754 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:45:20,352 p=5754 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:45:20,741 p=5754 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-04-28 17:45:20,749 p=5754 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-04-28 17:45:20,750 p=5754 u=root |  Saturday 28 April 2018  17:45:20 +0800 (0:00:01.601)       0:00:25.137 ******** 
+2018-04-28 17:45:21,191 p=5754 u=root |  changed: [controller]
+2018-04-28 17:45:21,197 p=5754 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-04-28 17:45:21,198 p=5754 u=root |  Saturday 28 April 2018  17:45:21 +0800 (0:00:00.448)       0:00:25.586 ******** 
+2018-04-28 17:45:23,015 p=5754 u=root |  changed: [controller]
+2018-04-28 17:45:23,019 p=5754 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-04-28 17:45:23,020 p=5754 u=root |  Saturday 28 April 2018  17:45:23 +0800 (0:00:01.821)       0:00:27.407 ******** 
+2018-04-28 17:45:31,684 p=5754 u=root |  changed: [controller]
+2018-04-28 17:45:31,690 p=5754 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-04-28 17:45:31,690 p=5754 u=root |  Saturday 28 April 2018  17:45:31 +0800 (0:00:08.670)       0:00:36.078 ******** 
+2018-04-28 17:52:46,125 p=5754 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-04-28 17:52:46,130 p=5754 u=root |  TASK [Environment : install sql] ***********************************************
+2018-04-28 17:52:46,130 p=5754 u=root |  Saturday 28 April 2018  17:52:46 +0800 (0:07:14.439)       0:07:50.518 ******** 
+2018-04-28 17:56:42,967 p=5754 u=root |  changed: [controller] => (item=[u'mariadb', u'mariadb-server', u'python2-PyMySQL'])
+2018-04-28 17:56:42,972 p=5754 u=root |  TASK [Environment : add mariadb_openstack.cnf file] ****************************
+2018-04-28 17:56:42,973 p=5754 u=root |  Saturday 28 April 2018  17:56:42 +0800 (0:03:56.842)       0:11:47.360 ******** 
+2018-04-28 17:56:44,385 p=5754 u=root |  changed: [controller]
+2018-04-28 17:56:44,389 p=5754 u=root |  TASK [Environment : install expect] ********************************************
+2018-04-28 17:56:44,390 p=5754 u=root |  Saturday 28 April 2018  17:56:44 +0800 (0:00:01.416)       0:11:48.777 ******** 
+2018-04-28 17:56:50,197 p=5754 u=root |  changed: [controller]
+2018-04-28 17:56:50,201 p=5754 u=root |  TASK [Environment : copy file] *************************************************
+2018-04-28 17:56:50,202 p=5754 u=root |  Saturday 28 April 2018  17:56:50 +0800 (0:00:05.812)       0:11:54.589 ******** 
+2018-04-28 17:56:51,121 p=5754 u=root |  changed: [controller]
+2018-04-28 17:56:51,126 p=5754 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-04-28 17:56:51,128 p=5754 u=root |  Saturday 28 April 2018  17:56:51 +0800 (0:00:00.924)       0:11:55.515 ******** 
+2018-04-28 17:58:11,177 p=5754 u=root |  changed: [controller]
+2018-04-28 17:58:11,185 p=5754 u=root |  TASK [Environment : restart mariadb] *******************************************
+2018-04-28 17:58:11,187 p=5754 u=root |  Saturday 28 April 2018  17:58:11 +0800 (0:01:20.057)       0:13:15.574 ******** 
+2018-04-28 17:58:24,381 p=5754 u=root |  changed: [controller]
+2018-04-28 17:58:24,386 p=5754 u=root |  TASK [Environment : install rabbitmq] ******************************************
+2018-04-28 17:58:24,387 p=5754 u=root |  Saturday 28 April 2018  17:58:24 +0800 (0:00:13.200)       0:13:28.774 ******** 
+2018-04-28 17:58:58,191 p=5754 u=root |  changed: [controller]
+2018-04-28 17:58:58,199 p=5754 u=root |  TASK [Environment : start rabbitmq-server] *************************************
+2018-04-28 17:58:58,200 p=5754 u=root |  Saturday 28 April 2018  17:58:58 +0800 (0:00:33.812)       0:14:02.587 ******** 
+2018-04-28 17:59:03,405 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:03,409 p=5754 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 17:59:03,410 p=5754 u=root |  Saturday 28 April 2018  17:59:03 +0800 (0:00:05.210)       0:14:07.797 ******** 
+2018-04-28 17:59:05,884 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:05,888 p=5754 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-04-28 17:59:05,889 p=5754 u=root |  Saturday 28 April 2018  17:59:05 +0800 (0:00:02.478)       0:14:10.276 ******** 
+2018-04-28 17:59:09,072 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:09,076 p=5754 u=root |  TASK [Environment : install Memcached] *****************************************
+2018-04-28 17:59:09,077 p=5754 u=root |  Saturday 28 April 2018  17:59:09 +0800 (0:00:03.187)       0:14:13.464 ******** 
+2018-04-28 17:59:15,128 p=5754 u=root |  changed: [controller] => (item=[u'memcached', u'python-memcached'])
+2018-04-28 17:59:15,135 p=5754 u=root |  TASK [Environment : modify the /etc/sysconfig/memcached file] ******************
+2018-04-28 17:59:15,136 p=5754 u=root |  Saturday 28 April 2018  17:59:15 +0800 (0:00:06.059)       0:14:19.523 ******** 
+2018-04-28 17:59:15,551 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:15,555 p=5754 u=root |  TASK [Environment : restart memcached] *****************************************
+2018-04-28 17:59:15,556 p=5754 u=root |  Saturday 28 April 2018  17:59:15 +0800 (0:00:00.420)       0:14:19.943 ******** 
+2018-04-28 17:59:16,593 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:16,599 p=5754 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 17:59:16,599 p=5754 u=root |  Saturday 28 April 2018  17:59:16 +0800 (0:00:01.043)       0:14:20.987 ******** 
+2018-04-28 17:59:35,252 p=5754 u=root |  changed: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 17:59:35,256 p=5754 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 17:59:35,257 p=5754 u=root |  Saturday 28 April 2018  17:59:35 +0800 (0:00:18.657)       0:14:39.644 ******** 
+2018-04-28 17:59:36,049 p=5754 u=root |  changed: [controller]
+2018-04-28 17:59:36,055 p=5754 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 17:59:36,056 p=5754 u=root |  Saturday 28 April 2018  17:59:36 +0800 (0:00:00.798)       0:14:40.443 ******** 
+2018-04-28 17:59:36,836 p=5754 u=root |  changed: [controller] => (item=localhost)
+2018-04-28 17:59:37,248 p=5754 u=root |  changed: [controller] => (item=%)
+2018-04-28 17:59:37,252 p=5754 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 17:59:37,253 p=5754 u=root |  Saturday 28 April 2018  17:59:37 +0800 (0:00:01.196)       0:14:41.640 ******** 
+2018-04-28 18:00:07,301 p=5754 u=root |  changed: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 18:00:07,307 p=5754 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 18:00:07,308 p=5754 u=root |  Saturday 28 April 2018  18:00:07 +0800 (0:00:30.054)       0:15:11.695 ******** 
+2018-04-28 18:00:07,823 p=5754 u=root |  changed: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^#connection ='})
+2018-04-28 18:00:08,189 p=5754 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^#provider = uuid'})
+2018-04-28 18:00:08,193 p=5754 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 18:00:08,194 p=5754 u=root |  Saturday 28 April 2018  18:00:08 +0800 (0:00:00.885)       0:15:12.581 ******** 
+2018-04-28 18:00:08,573 p=5754 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 18:00:08,578 p=5754 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 18:00:08,578 p=5754 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 18:00:08,579 p=5754 u=root |  controller                 : ok=26   changed=26   unreachable=0    failed=1   
+2018-04-28 18:00:08,579 p=5754 u=root |  Saturday 28 April 2018  18:00:08 +0800 (0:00:00.385)       0:15:12.967 ******** 
+2018-04-28 18:00:08,580 p=5754 u=root |  =============================================================================== 
+2018-04-28 18:00:08,580 p=5754 u=root |  Environment : start openstack storehouse and install openstack client,openstack-selinux - 434.44s
+2018-04-28 18:00:08,581 p=5754 u=root |  Environment : install sql --------------------------------------------- 236.84s
+2018-04-28 18:00:08,581 p=5754 u=root |  Environment : expect the mysql_secure_installation.exp ----------------- 80.06s
+2018-04-28 18:00:08,581 p=5754 u=root |  Environment : install rabbitmq ----------------------------------------- 33.81s
+2018-04-28 18:00:08,582 p=5754 u=root |  Identity : Install packages -------------------------------------------- 30.06s
+2018-04-28 18:00:08,582 p=5754 u=root |  Environment : install chrony ------------------------------------------- 21.37s
+2018-04-28 18:00:08,582 p=5754 u=root |  Identity : install depends --------------------------------------------- 18.66s
+2018-04-28 18:00:08,582 p=5754 u=root |  Environment : restart mariadb ------------------------------------------ 13.20s
+2018-04-28 18:00:08,583 p=5754 u=root |  Environment : install centos-release-openstack-newton ------------------- 8.67s
+2018-04-28 18:00:08,583 p=5754 u=root |  Environment : install Memcached ----------------------------------------- 6.06s
+2018-04-28 18:00:08,583 p=5754 u=root |  Environment : install expect -------------------------------------------- 5.81s
+2018-04-28 18:00:08,584 p=5754 u=root |  Environment : start rabbitmq-server ------------------------------------- 5.21s
+2018-04-28 18:00:08,584 p=5754 u=root |  Environment : useradd openstack ----------------------------------------- 3.19s
+2018-04-28 18:00:08,584 p=5754 u=root |  Environment : useradd openstack ----------------------------------------- 2.48s
+2018-04-28 18:00:08,585 p=5754 u=root |  Environment : restart NTP ----------------------------------------------- 1.82s
+2018-04-28 18:00:08,585 p=5754 u=root |  Environment : change the /etc/chrony.conf file -------------------------- 1.60s
+2018-04-28 18:00:08,585 p=5754 u=root |  Environment : add mariadb_openstack.cnf file ---------------------------- 1.42s
+2018-04-28 18:00:08,586 p=5754 u=root |  Environment : set hostname ---------------------------------------------- 1.30s
+2018-04-28 18:00:08,586 p=5754 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.20s
+2018-04-28 18:00:08,586 p=5754 u=root |  Environment : restart memcached ----------------------------------------- 1.04s
+2018-04-28 18:09:06,856 p=6055 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 18:09:06,905 p=6055 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 18:09:06,906 p=6055 u=root |  Saturday 28 April 2018  18:09:06 +0800 (0:00:00.054)       0:00:00.054 ******** 
+2018-04-28 18:09:08,405 p=6055 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 18:09:08,417 p=6055 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 18:09:08,418 p=6055 u=root |  Saturday 28 April 2018  18:09:08 +0800 (0:00:01.511)       0:00:01.566 ******** 
+2018-04-28 18:09:09,161 p=6055 u=root |  ok: [controller]
+2018-04-28 18:09:09,164 p=6055 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 18:09:09,165 p=6055 u=root |  Saturday 28 April 2018  18:09:09 +0800 (0:00:00.747)       0:00:02.313 ******** 
+2018-04-28 18:09:09,979 p=6055 u=root |  ok: [controller] => (item=localhost)
+2018-04-28 18:09:10,373 p=6055 u=root |  ok: [controller] => (item=%)
+2018-04-28 18:09:10,379 p=6055 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 18:09:10,379 p=6055 u=root |  Saturday 28 April 2018  18:09:10 +0800 (0:00:01.214)       0:00:03.527 ******** 
+2018-04-28 18:09:11,507 p=6055 u=root |  ok: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 18:09:11,517 p=6055 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 18:09:11,518 p=6055 u=root |  Saturday 28 April 2018  18:09:11 +0800 (0:00:01.138)       0:00:04.666 ******** 
+2018-04-28 18:09:12,439 p=6055 u=root |  ok: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^connection ='})
+2018-04-28 18:09:12,806 p=6055 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^provider = uuid'})
+2018-04-28 18:09:12,810 p=6055 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 18:09:12,810 p=6055 u=root |  Saturday 28 April 2018  18:09:12 +0800 (0:00:01.292)       0:00:05.959 ******** 
+2018-04-28 18:09:13,466 p=6055 u=root |  fatal: [controller]: FAILED! => {"changed": false, "cmd": "su-s /bin/sh -c 'keystone-manage db_sync' keystone", "failed": true, "msg": "[Errno 2] No such file or directory", "rc": 2}
+2018-04-28 18:09:13,471 p=6055 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 18:09:13,471 p=6055 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 18:09:13,471 p=6055 u=root |  controller                 : ok=5    changed=1    unreachable=0    failed=1   
+2018-04-28 18:09:13,472 p=6055 u=root |  Saturday 28 April 2018  18:09:13 +0800 (0:00:00.661)       0:00:06.620 ******** 
+2018-04-28 18:09:13,472 p=6055 u=root |  =============================================================================== 
+2018-04-28 18:09:13,473 p=6055 u=root |  Identity : install depends ---------------------------------------------- 1.51s
+2018-04-28 18:09:13,473 p=6055 u=root |  Identity : modify the /etc/keystone/keystone.conf file ------------------ 1.29s
+2018-04-28 18:09:13,473 p=6055 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.21s
+2018-04-28 18:09:13,474 p=6055 u=root |  Identity : Install packages --------------------------------------------- 1.14s
+2018-04-28 18:09:13,474 p=6055 u=root |  Identity : create keystone database ------------------------------------- 0.75s
+2018-04-28 18:09:13,474 p=6055 u=root |  Identity : populate the identity service -------------------------------- 0.66s
+2018-04-28 18:09:50,933 p=6121 u=root |  PLAY [install openstack] *******************************************************
+2018-04-28 18:09:50,986 p=6121 u=root |  TASK [Identity : install depends] **********************************************
+2018-04-28 18:09:50,987 p=6121 u=root |  Saturday 28 April 2018  18:09:50 +0800 (0:00:00.059)       0:00:00.059 ******** 
+2018-04-28 18:09:52,289 p=6121 u=root |  ok: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-04-28 18:09:52,295 p=6121 u=root |  TASK [Identity : create keystone database] *************************************
+2018-04-28 18:09:52,296 p=6121 u=root |  Saturday 28 April 2018  18:09:52 +0800 (0:00:01.309)       0:00:01.369 ******** 
+2018-04-28 18:09:53,057 p=6121 u=root |  ok: [controller]
+2018-04-28 18:09:53,061 p=6121 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-04-28 18:09:53,061 p=6121 u=root |  Saturday 28 April 2018  18:09:53 +0800 (0:00:00.765)       0:00:02.134 ******** 
+2018-04-28 18:09:53,806 p=6121 u=root |  ok: [controller] => (item=localhost)
+2018-04-28 18:09:54,216 p=6121 u=root |  ok: [controller] => (item=%)
+2018-04-28 18:09:54,221 p=6121 u=root |  TASK [Identity : Install packages] *********************************************
+2018-04-28 18:09:54,222 p=6121 u=root |  Saturday 28 April 2018  18:09:54 +0800 (0:00:01.160)       0:00:03.295 ******** 
+2018-04-28 18:09:55,299 p=6121 u=root |  ok: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-04-28 18:09:55,303 p=6121 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-04-28 18:09:55,304 p=6121 u=root |  Saturday 28 April 2018  18:09:55 +0800 (0:00:01.081)       0:00:04.376 ******** 
+2018-04-28 18:09:56,021 p=6121 u=root |  ok: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^connection ='})
+2018-04-28 18:09:56,357 p=6121 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^provider = uuid'})
+2018-04-28 18:09:56,365 p=6121 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-04-28 18:09:56,366 p=6121 u=root |  Saturday 28 April 2018  18:09:56 +0800 (0:00:01.061)       0:00:05.438 ******** 
+2018-04-28 18:09:59,888 p=6121 u=root |  changed: [controller]
+2018-04-28 18:09:59,890 p=6121 u=root |   [WARNING]: Consider using 'become', 'become_method', and 'become_user' rather than running su
+
+2018-04-28 18:09:59,894 p=6121 u=root |  TASK [Identity : Initialize Fernet key repositories] ***************************
+2018-04-28 18:09:59,895 p=6121 u=root |  Saturday 28 April 2018  18:09:59 +0800 (0:00:03.529)       0:00:08.967 ******** 
+2018-04-28 18:10:02,131 p=6121 u=root |  fatal: [controller]: FAILED! => {"changed": true, "cmd": ["keystone-manage", "fernet_setup", "--keystone-user", "keystone", "--keystone-group", "keystone", "keystone-manage", "credential_setup", "--keystone-user", "keystone", "--keystone-group", "keystone"], "delta": "0:00:01.869513", "end": "2018-04-28 18:10:28.187839", "failed": true, "rc": 2, "start": "2018-04-28 18:10:26.318326", "stderr": "usage: keystone-manage [bootstrap|credential_migrate|credential_rotate|credential_setup|db_sync|db_version|doctor|domain_config_upload|fernet_rotate|fernet_setup|mapping_populate|mapping_purge|mapping_engine|pki_setup|saml_idp_metadata|token_flush]\nkeystone-manage: error: unrecognized arguments: keystone-manage credential_setup", "stdout": "", "stdout_lines": [], "warnings": []}
+2018-04-28 18:10:02,135 p=6121 u=root |  	to retry, use: --limit @/root/openstack/openstack-ansible/playbooks/openstack.retry
+
+2018-04-28 18:10:02,136 p=6121 u=root |  PLAY RECAP *********************************************************************
+2018-04-28 18:10:02,136 p=6121 u=root |  controller                 : ok=6    changed=2    unreachable=0    failed=1   
+2018-04-28 18:10:02,137 p=6121 u=root |  Saturday 28 April 2018  18:10:02 +0800 (0:00:02.242)       0:00:11.209 ******** 
+2018-04-28 18:10:02,137 p=6121 u=root |  =============================================================================== 
+2018-04-28 18:10:02,138 p=6121 u=root |  Identity : populate the identity service -------------------------------- 3.53s
+2018-04-28 18:10:02,138 p=6121 u=root |  Identity : Initialize Fernet key repositories --------------------------- 2.24s
+2018-04-28 18:10:02,138 p=6121 u=root |  Identity : install depends ---------------------------------------------- 1.31s
+2018-04-28 18:10:02,139 p=6121 u=root |  Identity : Grant access to the DB for keystone -------------------------- 1.16s
+2018-04-28 18:10:02,139 p=6121 u=root |  Identity : Install packages --------------------------------------------- 1.08s
+2018-04-28 18:10:02,139 p=6121 u=root |  Identity : modify the /etc/keystone/keystone.conf file ------------------ 1.06s
+2018-04-28 18:10:02,140 p=6121 u=root |  Identity : create keystone database ------------------------------------- 0.76s
