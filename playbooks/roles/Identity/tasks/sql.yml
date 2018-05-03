@@ -21,6 +21,9 @@
       - httpd
       - mod_wsgi
 
+- name: Install OpenStackClient
+  command: pip install python-openstackclient
+
 - name: modify the /etc/keystone/keystone.conf file
   lineinfile:
       dest: /etc/keystone/keystone.conf
@@ -36,26 +39,21 @@
   failed_when: result.rc != 0
 
 - name: Initialize Fernet key repositories
-  command: |
-      keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone  
-      keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
+  command: keystone-manage fernet_setup --keystone-user keystone --keystone-group keystone
+- name: and
+  command: keystone-manage credential_setup --keystone-user keystone --keystone-group keystone
 
 - name: Bootstrap the Identity service
-  command: >
-      keystone-manage bootstrap --bootstrap-password 123456
-      --bootstrap-admin-url http://controller:35357/v3/
-      --bootstrap-internal-url http://controller:35357/v3/
-      --bootstrap-public-url http://controller:5000/v3/
-      --bootstrap-region-id RegionOne
+  command: keystone-manage bootstrap --bootstrap-password 123456 --bootstrap-admin-url http://controller:35357/v3/ --bootstrap-internal-url http://controller:35357/v3/ --bootstrap-public-url http://controller:5000/v3/ --bootstrap-region-id RegionOne
 
 - name: modify the /etc/httpd/conf/httpd.conf file
   lineinfile:
-      dest: /etc/httpd/conf/httpd.conf 
+      dest: /etc/httpd/conf/httpd.conf
       regexp: '^#ServerName'
       line: 'ServerName controller'
 
 - name: create link file
-  file: src=/usr/share/keystone/wsgi-keystone.conf dest=/etc/httpd/conf.d/ state=link
+  shell: ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
 
 - name: start and enable http service
   service: name=httpd state=started enabled=yes

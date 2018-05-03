@@ -1,4 +1,5 @@
-#!/bin/expect
+#!/bin/bash
+/usr/bin/expect <<EOF 
 
 spawn mysql_secure_installation
 

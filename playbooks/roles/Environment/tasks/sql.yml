@@ -6,16 +6,22 @@
       - python2-PyMySQL
 
 - name: add mariadb_openstack.cnf file
-  copy: src=./files/openstack.cnf dest=/etc/my.cnf.d/
+  copy: src=files/openstack.cnf dest=/etc/my.cnf.d/
 
-- name: install expect 
+- name: install expect
   yum: name=expect state=installed
 
 - name: copy file
-  copy: src=./files/mysql_secure_installation.exp dest=/root/
+  copy: src=files/mysql_secure_installation.exp dest=/root/
+
+- name: chmod
+  file: path=/root/mysql_secure_installation.exp mode=777
+
+- name: start mariadb
+  service: name=mariadb state=started enabled=yes
 
 - name: expect the mysql_secure_installation.exp
-  shell: expect /root/mysql_secure_installation.exp && touch test.txt
+  command: ./mysql_secure_installation.exp
 
-- name: restart mariadb
-  service: name=mariadb state=started enabled=yes
+- name: del mysql_secure_installation.exp
+  file: path=/root/mysql_secure_installation.exp state=absent
