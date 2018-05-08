@@ -1,4 +1,4 @@
-- name: add admin-openrc file
+- name: copy file 
   copy: src=files/admin-openrc dest=/root/admin-openrc
 
 - name: Create a service project
