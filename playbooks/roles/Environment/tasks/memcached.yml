@@ -8,7 +8,7 @@
   lineinfile:
       dest: /etc/sysconfig/memcached
       regexp: '^OPTIONS'
-      line: 'OPTIONS=-l "{{ansible_host}}",::1'
+      line: 'OPTIONS=-l "{{ansible_host}}",::1,controller'
 
 - name: restart memcached
   service: name=memcached state=started enabled=yes

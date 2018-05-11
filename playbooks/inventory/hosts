@@ -1,4 +1,4 @@
-controller ansible_connection=ssh ansible_user=root ansible_host=172.16.52.17
+controller ansible_connection=ssh ansible_user=root ansible_host=172.16.53.250
 
 [all:vars]
 ansible_ssh_pass='123456'

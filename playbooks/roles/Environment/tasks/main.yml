@@ -1,4 +1,11 @@
 ---
+
+#- name: del repo
+#  file: path=/etc/yum.repos.d/*.repo state=absent
+
+- name: change repo
+  template: src=templates/CentOS-Base.repo.j2 dest=/etc/yum.repos.d/CentOS-Base.repo
+
 - include: host-config.yml
 
 - include: ntp.yml
