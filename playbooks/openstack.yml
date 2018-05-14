@@ -1,7 +1,9 @@
 - name: install openstack 
   gather_facts: no
   hosts: all
+  vars_files:
+      - ./group_vars/all.yml
   roles:
-      - Environment
-      - Identity
-
+#    - Environment
+#    - Identity
+     - Image
