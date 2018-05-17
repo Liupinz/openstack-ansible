@@ -4,6 +4,10 @@
   vars_files:
       - ./group_vars/all.yml
   roles:
-#    - Environment
-#    - Identity
-#    - Image
+     - Environment
+     - Identity
+     - Image
+     - Compute
+     - Network
+     - Dashboard
+
