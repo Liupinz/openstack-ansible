@@ -1,10 +1,16 @@
 ---
 
-#- name: del repo
-#  file: path=/etc/yum.repos.d/*.repo state=absent
+#- name: change CentOS-QEMU-EV.repo
+#  lineinfile:
+#      dest: /etc/yum.repos.d/CentOS-QEMU-EV.repo
+#      regexp: '^enabled=1'
+#      line: 'enabled=0'
 
 - name: change repo
   template: src=templates/CentOS-Base.repo.j2 dest=/etc/yum.repos.d/CentOS-Base.repo
+
+- name: yum clean
+  shell: yum clean all && yum makecache
 
 - include: host-config.yml
 
