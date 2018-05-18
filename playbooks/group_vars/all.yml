@@ -10,7 +10,8 @@ GLANCE_PASS: 123456
 NOVA_DBPASS: 123456
 RABBIT_PASS: 123456
 NOVA_PASS: 123456
-controller_ip: 172.16.53.250
+#you need to edit controller_ip for your actual environment
+controller_ip: 172.16.53.249
 PLACEMENT_PASS: 123456
 
 #neutron.conf
