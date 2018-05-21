@@ -14,18 +14,19 @@
       - "localhost"
       - "%"
 
-#Create neutron user
 - name: template neutron user template
   template: src=templates/create_neutron_user.j2 dest=/root/create_neutron_user.sh mode=777
 
 - name: create neutron user
   command: bash /root/create_neutron_user.sh
+  
+- name: create neutron user again
+  command: bash /root/create_neutron_user.sh
+  ignore_errors: true 
 
-#Add the admin role to the neutron user
 - name: Add the admin role to the neutron user
   shell: source /root/admin-openrc && openstack role add --project service --user neutron admin
 
-#Create the neutron service and api
 - name: create neutron service and api
   template: src=templates/create_neutron_api.j2 dest=/root/create_neutron_api.sh mode=777
 
