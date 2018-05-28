@@ -17,6 +17,19 @@
 - name: chmod
   file: path=/root/mysql_secure_installation.exp mode=777
 
+- name: config /usr/lib/systemd/system/mariadb.service  for limit
+  ini_file: 
+      dest: /usr/lib/systemd/system/mariadb.service
+      section: {{ item.section }}
+      option: {{ item.key }}
+      value: {{ item.value }}
+  with_items:
+      - { section: 'Service',key: 'LimitNOFILE',value: '65535' }
+      - { section: 'Service',key: 'LimitNPROC',value: '65535'}
+
+- name: daemon-reload
+  shell: systemctl daemon-reload
+
 - name: start mariadb
   service: name=mariadb state=started enabled=yes
 
