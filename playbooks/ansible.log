@@ -1,0 +1,394 @@
+2018-05-28 11:12:05,211 p=31535 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_DBPASS). Using last defined value only.
+
+2018-05-28 11:12:05,212 p=31535 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_PASS). Using last defined value only.
+
+2018-05-28 11:12:05,342 p=31535 u=root |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/roles/Environment/tasks/sql.yml': line 23, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      dest: /usr/lib/systemd/system/mariadb.service
+      section: {{ item.section }}
+                ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2018-05-28 11:19:30,030 p=31618 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_DBPASS). Using last defined value only.
+
+2018-05-28 11:19:30,032 p=31618 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_PASS). Using last defined value only.
+
+2018-05-28 11:19:30,534 p=31618 u=root |  PLAY [install openstack] *******************************************************
+2018-05-28 11:19:30,698 p=31618 u=root |  TASK [Environment : change repo] ***********************************************
+2018-05-28 11:19:30,699 p=31618 u=root |  Monday 28 May 2018  11:19:30 +0800 (0:00:00.175)       0:00:00.175 ************ 
+2018-05-28 11:19:42,928 p=31618 u=root |  fatal: [controller]: UNREACHABLE! => {"changed": false, "msg": "Authentication failure.", "unreachable": true}
+2018-05-28 11:19:42,935 p=31618 u=root |  	to retry, use: --limit @/root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/openstack.retry
+
+2018-05-28 11:19:42,936 p=31618 u=root |  PLAY RECAP *********************************************************************
+2018-05-28 11:19:42,936 p=31618 u=root |  controller                 : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-28 11:19:42,937 p=31618 u=root |  Monday 28 May 2018  11:19:42 +0800 (0:00:12.238)       0:00:12.413 ************ 
+2018-05-28 11:19:42,937 p=31618 u=root |  =============================================================================== 
+2018-05-28 11:19:42,938 p=31618 u=root |  Environment : change repo ---------------------------------------------- 12.24s
+2018-05-28 11:19:56,984 p=31641 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_DBPASS). Using last defined value only.
+
+2018-05-28 11:19:56,985 p=31641 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_PASS). Using last defined value only.
+
+2018-05-28 11:19:57,535 p=31641 u=root |  PLAY [install openstack] *******************************************************
+2018-05-28 11:19:57,705 p=31641 u=root |  TASK [Environment : change repo] ***********************************************
+2018-05-28 11:19:57,705 p=31641 u=root |  Monday 28 May 2018  11:19:57 +0800 (0:00:00.181)       0:00:00.181 ************ 
+2018-05-28 11:20:10,283 p=31641 u=root |  fatal: [controller]: UNREACHABLE! => {"changed": false, "msg": "Authentication failure.", "unreachable": true}
+2018-05-28 11:20:10,293 p=31641 u=root |  	to retry, use: --limit @/root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/openstack.retry
+
+2018-05-28 11:20:10,293 p=31641 u=root |  PLAY RECAP *********************************************************************
+2018-05-28 11:20:10,293 p=31641 u=root |  controller                 : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-28 11:20:10,294 p=31641 u=root |  Monday 28 May 2018  11:20:10 +0800 (0:00:12.588)       0:00:12.769 ************ 
+2018-05-28 11:20:10,294 p=31641 u=root |  =============================================================================== 
+2018-05-28 11:20:10,294 p=31641 u=root |  Environment : change repo ---------------------------------------------- 12.59s
+2018-05-28 11:20:41,865 p=31659 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_DBPASS). Using last defined value only.
+
+2018-05-28 11:20:41,867 p=31659 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_PASS). Using last defined value only.
+
+2018-05-28 11:20:42,391 p=31659 u=root |  PLAY [install openstack] *******************************************************
+2018-05-28 11:20:42,548 p=31659 u=root |  TASK [Environment : change repo] ***********************************************
+2018-05-28 11:20:42,549 p=31659 u=root |  Monday 28 May 2018  11:20:42 +0800 (0:00:00.166)       0:00:00.166 ************ 
+2018-05-28 11:20:54,343 p=31659 u=root |  fatal: [controller]: UNREACHABLE! => {"changed": false, "msg": "Authentication failure.", "unreachable": true}
+2018-05-28 11:20:54,352 p=31659 u=root |  	to retry, use: --limit @/root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/openstack.retry
+
+2018-05-28 11:20:54,353 p=31659 u=root |  PLAY RECAP *********************************************************************
+2018-05-28 11:20:54,353 p=31659 u=root |  controller                 : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-28 11:20:54,353 p=31659 u=root |  Monday 28 May 2018  11:20:54 +0800 (0:00:11.804)       0:00:11.971 ************ 
+2018-05-28 11:20:54,354 p=31659 u=root |  =============================================================================== 
+2018-05-28 11:20:54,354 p=31659 u=root |  Environment : change repo ---------------------------------------------- 11.81s
+2018-05-28 11:24:47,652 p=31693 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_DBPASS). Using last defined value only.
+
+2018-05-28 11:24:47,655 p=31693 u=root |   [WARNING]: While constructing a mapping from /root/openstack-all-in-one/openstack-ansible-ALL-IN-ONE/playbooks/group_vars/all.yml, line 2, column 1, found a
+duplicate dict key (GLANCE_PASS). Using last defined value only.
+
+2018-05-28 11:24:48,959 p=31693 u=root |  PLAY [install openstack] *******************************************************
+2018-05-28 11:24:49,239 p=31693 u=root |  TASK [Environment : change repo] ***********************************************
+2018-05-28 11:24:49,240 p=31693 u=root |  Monday 28 May 2018  11:24:49 +0800 (0:00:00.295)       0:00:00.295 ************ 
+2018-05-28 11:25:01,417 p=31693 u=root |  changed: [controller]
+2018-05-28 11:25:01,425 p=31693 u=root |  TASK [Environment : yum clean] *************************************************
+2018-05-28 11:25:01,425 p=31693 u=root |  Monday 28 May 2018  11:25:01 +0800 (0:00:12.184)       0:00:12.480 ************ 
+2018-05-28 11:25:47,121 p=31693 u=root |  changed: [controller]
+2018-05-28 11:25:47,123 p=31693 u=root |   [WARNING]: Consider using yum module rather than running yum
+
+2018-05-28 11:25:47,131 p=31693 u=root |  TASK [Environment : set hostname] **********************************************
+2018-05-28 11:25:47,132 p=31693 u=root |  Monday 28 May 2018  11:25:47 +0800 (0:00:45.706)       0:00:58.186 ************ 
+2018-05-28 11:25:53,607 p=31693 u=root |  changed: [controller]
+2018-05-28 11:25:53,615 p=31693 u=root |  TASK [Environment : add host file] *********************************************
+2018-05-28 11:25:53,616 p=31693 u=root |  Monday 28 May 2018  11:25:53 +0800 (0:00:06.484)       0:01:04.670 ************ 
+2018-05-28 11:25:54,550 p=31693 u=root |  changed: [controller]
+2018-05-28 11:25:54,561 p=31693 u=root |  TASK [Environment : install chrony] ********************************************
+2018-05-28 11:25:54,562 p=31693 u=root |  Monday 28 May 2018  11:25:54 +0800 (0:00:00.945)       0:01:05.616 ************ 
+2018-05-28 11:26:07,016 p=31693 u=root |  changed: [controller]
+2018-05-28 11:26:07,026 p=31693 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-05-28 11:26:07,027 p=31693 u=root |  Monday 28 May 2018  11:26:07 +0800 (0:00:12.464)       0:01:18.081 ************ 
+2018-05-28 11:26:07,642 p=31693 u=root |  changed: [controller] => (item={u'regexp': u'server 0.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-05-28 11:26:08,135 p=31693 u=root |  changed: [controller] => (item={u'regexp': u'server 1.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-05-28 11:26:08,543 p=31693 u=root |  changed: [controller] => (item={u'regexp': u'server 2.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-05-28 11:26:08,969 p=31693 u=root |  changed: [controller] => (item={u'regexp': u'server 3.centos.pool.ntp.org iburst', u'line': u'server cn.pool.ntp.org'})
+2018-05-28 11:26:08,983 p=31693 u=root |  TASK [Environment : change the /etc/chrony.conf file] **************************
+2018-05-28 11:26:08,984 p=31693 u=root |  Monday 28 May 2018  11:26:08 +0800 (0:00:01.957)       0:01:20.039 ************ 
+2018-05-28 11:26:09,428 p=31693 u=root |  changed: [controller]
+2018-05-28 11:26:09,437 p=31693 u=root |  TASK [Environment : restart NTP] ***********************************************
+2018-05-28 11:26:09,438 p=31693 u=root |  Monday 28 May 2018  11:26:09 +0800 (0:00:00.453)       0:01:20.492 ************ 
+2018-05-28 11:26:12,006 p=31693 u=root |  changed: [controller]
+2018-05-28 11:26:12,018 p=31693 u=root |  TASK [Environment : install centos-release-openstack-newton] *******************
+2018-05-28 11:26:12,020 p=31693 u=root |  Monday 28 May 2018  11:26:12 +0800 (0:00:02.581)       0:01:23.074 ************ 
+2018-05-28 11:26:16,866 p=31693 u=root |  changed: [controller]
+2018-05-28 11:26:16,875 p=31693 u=root |  TASK [Environment : change qemu repo] ******************************************
+2018-05-28 11:26:16,875 p=31693 u=root |  Monday 28 May 2018  11:26:16 +0800 (0:00:04.855)       0:01:27.930 ************ 
+2018-05-28 11:26:18,217 p=31693 u=root |  changed: [controller]
+2018-05-28 11:26:18,226 p=31693 u=root |  TASK [Environment : start openstack storehouse and install openstack client,openstack-selinux] ***
+2018-05-28 11:26:18,226 p=31693 u=root |  Monday 28 May 2018  11:26:18 +0800 (0:00:01.351)       0:01:29.281 ************ 
+2018-05-28 11:40:49,675 p=31693 u=root |  changed: [controller] => (item=[u'python-openstackclient', u'openstack-selinux'])
+2018-05-28 11:40:49,694 p=31693 u=root |  TASK [Environment : install sql] ***********************************************
+2018-05-28 11:40:49,695 p=31693 u=root |  Monday 28 May 2018  11:40:49 +0800 (0:14:31.468)       0:16:00.750 ************ 
+2018-05-28 12:01:25,108 p=31693 u=root |  changed: [controller] => (item=[u'mariadb', u'mariadb-server', u'python2-PyMySQL'])
+2018-05-28 12:01:25,120 p=31693 u=root |  TASK [Environment : add mariadb_openstack.cnf file] ****************************
+2018-05-28 12:01:25,121 p=31693 u=root |  Monday 28 May 2018  12:01:25 +0800 (0:20:35.425)       0:36:36.175 ************ 
+2018-05-28 12:01:26,409 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:26,420 p=31693 u=root |  TASK [Environment : install expect] ********************************************
+2018-05-28 12:01:26,421 p=31693 u=root |  Monday 28 May 2018  12:01:26 +0800 (0:00:01.299)       0:36:37.475 ************ 
+2018-05-28 12:01:37,529 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:37,540 p=31693 u=root |  TASK [Environment : copy file] *************************************************
+2018-05-28 12:01:37,541 p=31693 u=root |  Monday 28 May 2018  12:01:37 +0800 (0:00:11.120)       0:36:48.596 ************ 
+2018-05-28 12:01:38,899 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:38,911 p=31693 u=root |  TASK [Environment : chmod] *****************************************************
+2018-05-28 12:01:38,912 p=31693 u=root |  Monday 28 May 2018  12:01:38 +0800 (0:00:01.370)       0:36:49.967 ************ 
+2018-05-28 12:01:39,895 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:39,905 p=31693 u=root |  TASK [Environment : config /usr/lib/systemd/system/mariadb.service  for limit] *
+2018-05-28 12:01:39,906 p=31693 u=root |  Monday 28 May 2018  12:01:39 +0800 (0:00:00.993)       0:36:50.960 ************ 
+2018-05-28 12:01:41,024 p=31693 u=root |  changed: [controller] => (item={u'section': u'Service', u'value': u'65535', u'key': u'LimitNOFILE'})
+2018-05-28 12:01:41,434 p=31693 u=root |  changed: [controller] => (item={u'section': u'Service', u'value': u'65535', u'key': u'LimitNPROC'})
+2018-05-28 12:01:41,445 p=31693 u=root |  TASK [Environment : daemon-reload] *********************************************
+2018-05-28 12:01:41,446 p=31693 u=root |  Monday 28 May 2018  12:01:41 +0800 (0:00:01.539)       0:36:52.500 ************ 
+2018-05-28 12:01:41,995 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:42,003 p=31693 u=root |  TASK [Environment : start mariadb] *********************************************
+2018-05-28 12:01:42,004 p=31693 u=root |  Monday 28 May 2018  12:01:42 +0800 (0:00:00.558)       0:36:53.058 ************ 
+2018-05-28 12:01:55,932 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:55,940 p=31693 u=root |  TASK [Environment : expect the mysql_secure_installation.exp] ******************
+2018-05-28 12:01:55,942 p=31693 u=root |  Monday 28 May 2018  12:01:55 +0800 (0:00:13.937)       0:37:06.996 ************ 
+2018-05-28 12:01:56,667 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:56,676 p=31693 u=root |  TASK [Environment : del mysql_secure_installation.exp] *************************
+2018-05-28 12:01:56,676 p=31693 u=root |  Monday 28 May 2018  12:01:56 +0800 (0:00:00.734)       0:37:07.731 ************ 
+2018-05-28 12:01:57,157 p=31693 u=root |  changed: [controller]
+2018-05-28 12:01:57,168 p=31693 u=root |  TASK [Environment : install rabbitmq] ******************************************
+2018-05-28 12:01:57,168 p=31693 u=root |  Monday 28 May 2018  12:01:57 +0800 (0:00:00.491)       0:37:08.223 ************ 
+2018-05-28 12:02:41,037 p=31693 u=root |  changed: [controller]
+2018-05-28 12:02:41,045 p=31693 u=root |  TASK [Environment : start rabbitmq-server] *************************************
+2018-05-28 12:02:41,046 p=31693 u=root |  Monday 28 May 2018  12:02:41 +0800 (0:00:43.877)       0:37:52.100 ************ 
+2018-05-28 12:02:51,787 p=31693 u=root |  changed: [controller]
+2018-05-28 12:02:51,800 p=31693 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-05-28 12:02:51,802 p=31693 u=root |  Monday 28 May 2018  12:02:51 +0800 (0:00:10.754)       0:38:02.855 ************ 
+2018-05-28 12:02:56,079 p=31693 u=root |  changed: [controller]
+2018-05-28 12:02:56,087 p=31693 u=root |  TASK [Environment : useradd openstack] *****************************************
+2018-05-28 12:02:56,087 p=31693 u=root |  Monday 28 May 2018  12:02:56 +0800 (0:00:04.286)       0:38:07.142 ************ 
+2018-05-28 12:02:59,823 p=31693 u=root |  changed: [controller]
+2018-05-28 12:02:59,832 p=31693 u=root |  TASK [Environment : install Memcached] *****************************************
+2018-05-28 12:02:59,832 p=31693 u=root |  Monday 28 May 2018  12:02:59 +0800 (0:00:03.744)       0:38:10.887 ************ 
+2018-05-28 12:03:29,612 p=31693 u=root |  changed: [controller] => (item=[u'memcached', u'python-memcached'])
+2018-05-28 12:03:29,628 p=31693 u=root |  TASK [Environment : modify the /etc/sysconfig/memcached file] ******************
+2018-05-28 12:03:29,630 p=31693 u=root |  Monday 28 May 2018  12:03:29 +0800 (0:00:29.797)       0:38:40.684 ************ 
+2018-05-28 12:03:30,216 p=31693 u=root |  changed: [controller]
+2018-05-28 12:03:30,228 p=31693 u=root |  TASK [Environment : restart memcached] *****************************************
+2018-05-28 12:03:30,229 p=31693 u=root |  Monday 28 May 2018  12:03:30 +0800 (0:00:00.598)       0:38:41.283 ************ 
+2018-05-28 12:03:31,540 p=31693 u=root |  changed: [controller]
+2018-05-28 12:03:31,553 p=31693 u=root |  TASK [Identity : install depends] **********************************************
+2018-05-28 12:03:31,554 p=31693 u=root |  Monday 28 May 2018  12:03:31 +0800 (0:00:01.324)       0:38:42.608 ************ 
+2018-05-28 12:03:47,263 p=31693 u=root |  changed: [controller] => (item=[u'python-pip', u'python-devel', u'MySQL-python'])
+2018-05-28 12:03:47,275 p=31693 u=root |  TASK [Identity : create keystone database] *************************************
+2018-05-28 12:03:47,277 p=31693 u=root |  Monday 28 May 2018  12:03:47 +0800 (0:00:15.722)       0:38:58.331 ************ 
+2018-05-28 12:03:48,494 p=31693 u=root |  changed: [controller]
+2018-05-28 12:03:48,505 p=31693 u=root |  TASK [Identity : Grant access to the DB for keystone] **************************
+2018-05-28 12:03:48,507 p=31693 u=root |  Monday 28 May 2018  12:03:48 +0800 (0:00:01.229)       0:38:59.561 ************ 
+2018-05-28 12:03:49,821 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:03:50,334 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:03:50,342 p=31693 u=root |  TASK [Identity : Install packages] *********************************************
+2018-05-28 12:03:50,342 p=31693 u=root |  Monday 28 May 2018  12:03:50 +0800 (0:00:01.835)       0:39:01.397 ************ 
+2018-05-28 12:04:25,394 p=31693 u=root |  changed: [controller] => (item=[u'openstack-keystone', u'httpd', u'mod_wsgi'])
+2018-05-28 12:04:25,410 p=31693 u=root |  TASK [Identity : Install OpenStackClient] **************************************
+2018-05-28 12:04:25,411 p=31693 u=root |  Monday 28 May 2018  12:04:25 +0800 (0:00:35.068)       0:39:36.465 ************ 
+2018-05-28 12:04:35,278 p=31693 u=root |  changed: [controller]
+2018-05-28 12:04:35,288 p=31693 u=root |  TASK [Identity : modify the /etc/keystone/keystone.conf file] ******************
+2018-05-28 12:04:35,289 p=31693 u=root |  Monday 28 May 2018  12:04:35 +0800 (0:00:09.878)       0:39:46.343 ************ 
+2018-05-28 12:04:35,849 p=31693 u=root |  changed: [controller] => (item={u'value': u'connection = mysql+pymysql://keystone:123456@controller/keystone', u'key': u'^#connection ='})
+2018-05-28 12:04:36,271 p=31693 u=root |  changed: [controller] => (item={u'value': u'provider = fernet', u'key': u'^#provider = uuid'})
+2018-05-28 12:04:36,292 p=31693 u=root |  TASK [Identity : populate the identity service] ********************************
+2018-05-28 12:04:36,293 p=31693 u=root |  Monday 28 May 2018  12:04:36 +0800 (0:00:01.003)       0:39:47.347 ************ 
+2018-05-28 12:04:50,790 p=31693 u=root |  changed: [controller]
+2018-05-28 12:04:50,792 p=31693 u=root |   [WARNING]: Consider using 'become', 'become_method', and 'become_user' rather than running su
+
+2018-05-28 12:04:50,804 p=31693 u=root |  TASK [Identity : Initialize Fernet key repositories] ***************************
+2018-05-28 12:04:50,805 p=31693 u=root |  Monday 28 May 2018  12:04:50 +0800 (0:00:14.511)       0:40:01.859 ************ 
+2018-05-28 12:04:54,604 p=31693 u=root |  changed: [controller]
+2018-05-28 12:04:54,614 p=31693 u=root |  TASK [Identity : and] **********************************************************
+2018-05-28 12:04:54,614 p=31693 u=root |  Monday 28 May 2018  12:04:54 +0800 (0:00:03.809)       0:40:05.669 ************ 
+2018-05-28 12:04:59,000 p=31693 u=root |  changed: [controller]
+2018-05-28 12:04:59,014 p=31693 u=root |  TASK [Identity : Bootstrap the Identity service] *******************************
+2018-05-28 12:04:59,016 p=31693 u=root |  Monday 28 May 2018  12:04:59 +0800 (0:00:04.400)       0:40:10.070 ************ 
+2018-05-28 12:05:06,704 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:06,712 p=31693 u=root |  TASK [Identity : modify the /etc/httpd/conf/httpd.conf file] *******************
+2018-05-28 12:05:06,712 p=31693 u=root |  Monday 28 May 2018  12:05:06 +0800 (0:00:07.697)       0:40:17.767 ************ 
+2018-05-28 12:05:07,274 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:07,282 p=31693 u=root |  TASK [Identity : create link file] *********************************************
+2018-05-28 12:05:07,283 p=31693 u=root |  Monday 28 May 2018  12:05:07 +0800 (0:00:00.570)       0:40:18.337 ************ 
+2018-05-28 12:05:07,816 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:07,817 p=31693 u=root |   [WARNING]: Consider using file module with state=link rather than running ln
+
+2018-05-28 12:05:07,825 p=31693 u=root |  TASK [Identity : start and enable http service] ********************************
+2018-05-28 12:05:07,825 p=31693 u=root |  Monday 28 May 2018  12:05:07 +0800 (0:00:00.542)       0:40:18.880 ************ 
+2018-05-28 12:05:09,399 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:09,413 p=31693 u=root |  TASK [Identity : copy file] ****************************************************
+2018-05-28 12:05:09,414 p=31693 u=root |  Monday 28 May 2018  12:05:09 +0800 (0:00:01.588)       0:40:20.468 ************ 
+2018-05-28 12:05:10,633 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:10,642 p=31693 u=root |  TASK [Identity : copy] *********************************************************
+2018-05-28 12:05:10,643 p=31693 u=root |  Monday 28 May 2018  12:05:10 +0800 (0:00:01.228)       0:40:21.697 ************ 
+2018-05-28 12:05:11,950 p=31693 u=root |  changed: [controller]
+2018-05-28 12:05:11,963 p=31693 u=root |  TASK [Identity : create service,demo project and demo user] ********************
+2018-05-28 12:05:11,964 p=31693 u=root |  Monday 28 May 2018  12:05:11 +0800 (0:00:01.321)       0:40:23.018 ************ 
+2018-05-28 12:06:06,128 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:06,139 p=31693 u=root |  TASK [Identity : Create the user role] *****************************************
+2018-05-28 12:06:06,140 p=31693 u=root |  Monday 28 May 2018  12:06:06 +0800 (0:00:54.175)       0:41:17.194 ************ 
+2018-05-28 12:06:12,963 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:12,976 p=31693 u=root |  TASK [Identity : Add the user role to the demo user of the demo project] *******
+2018-05-28 12:06:12,977 p=31693 u=root |  Monday 28 May 2018  12:06:12 +0800 (0:00:06.836)       0:41:24.031 ************ 
+2018-05-28 12:06:24,129 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:24,139 p=31693 u=root |  TASK [Image : create glance database] ******************************************
+2018-05-28 12:06:24,140 p=31693 u=root |  Monday 28 May 2018  12:06:24 +0800 (0:00:11.163)       0:41:35.194 ************ 
+2018-05-28 12:06:24,804 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:24,814 p=31693 u=root |  TASK [Image : Grant proper access to the glance database] **********************
+2018-05-28 12:06:24,815 p=31693 u=root |  Monday 28 May 2018  12:06:24 +0800 (0:00:00.674)       0:41:35.869 ************ 
+2018-05-28 12:06:25,442 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:06:25,902 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:06:25,916 p=31693 u=root |  TASK [Image : Create the glance user] ******************************************
+2018-05-28 12:06:25,917 p=31693 u=root |  Monday 28 May 2018  12:06:25 +0800 (0:00:01.101)       0:41:36.971 ************ 
+2018-05-28 12:06:27,192 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:27,205 p=31693 u=root |  TASK [Image : bash create_glance_user.sh] **************************************
+2018-05-28 12:06:27,207 p=31693 u=root |  Monday 28 May 2018  12:06:27 +0800 (0:00:01.289)       0:41:38.261 ************ 
+2018-05-28 12:06:34,837 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:34,845 p=31693 u=root |  TASK [Image : Add the admin role to the glance user and service project] *******
+2018-05-28 12:06:34,846 p=31693 u=root |  Monday 28 May 2018  12:06:34 +0800 (0:00:07.639)       0:41:45.900 ************ 
+2018-05-28 12:06:43,843 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:43,851 p=31693 u=root |  TASK [Image : Create glance api] ***********************************************
+2018-05-28 12:06:43,852 p=31693 u=root |  Monday 28 May 2018  12:06:43 +0800 (0:00:09.006)       0:41:54.906 ************ 
+2018-05-28 12:06:45,096 p=31693 u=root |  changed: [controller]
+2018-05-28 12:06:45,103 p=31693 u=root |  TASK [Image : bash create_glance_api.sh] ***************************************
+2018-05-28 12:06:45,104 p=31693 u=root |  Monday 28 May 2018  12:06:45 +0800 (0:00:01.252)       0:41:56.159 ************ 
+2018-05-28 12:07:13,446 p=31693 u=root |  changed: [controller]
+2018-05-28 12:07:13,452 p=31693 u=root |  TASK [Image : Install the packages] ********************************************
+2018-05-28 12:07:13,452 p=31693 u=root |  Monday 28 May 2018  12:07:13 +0800 (0:00:28.347)       0:42:24.507 ************ 
+2018-05-28 12:07:59,874 p=31693 u=root |  changed: [controller]
+2018-05-28 12:07:59,882 p=31693 u=root |  TASK [Image : Edit the /etc/glance/glance-api.conf file] ***********************
+2018-05-28 12:07:59,883 p=31693 u=root |  Monday 28 May 2018  12:07:59 +0800 (0:00:46.430)       0:43:10.937 ************ 
+2018-05-28 12:08:01,401 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:01,413 p=31693 u=root |  TASK [Image : Edit the /etc/glance/glance-registry.conf file] ******************
+2018-05-28 12:08:01,415 p=31693 u=root |  Monday 28 May 2018  12:08:01 +0800 (0:00:01.531)       0:43:12.469 ************ 
+2018-05-28 12:08:02,924 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:02,932 p=31693 u=root |  TASK [Image : Populate the Image service database] *****************************
+2018-05-28 12:08:02,933 p=31693 u=root |  Monday 28 May 2018  12:08:02 +0800 (0:00:01.518)       0:43:13.987 ************ 
+2018-05-28 12:08:13,024 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:13,034 p=31693 u=root |  TASK [Image : start and enable openstack-glance-api] ***************************
+2018-05-28 12:08:13,036 p=31693 u=root |  Monday 28 May 2018  12:08:13 +0800 (0:00:10.102)       0:43:24.090 ************ 
+2018-05-28 12:08:14,307 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:14,318 p=31693 u=root |  TASK [Compute : Create the nova_api, nova, and nova_cell0 databases] ***********
+2018-05-28 12:08:14,319 p=31693 u=root |  Monday 28 May 2018  12:08:14 +0800 (0:00:01.283)       0:43:25.373 ************ 
+2018-05-28 12:08:14,930 p=31693 u=root |  changed: [controller] => (item=nova_api)
+2018-05-28 12:08:15,415 p=31693 u=root |  changed: [controller] => (item=nova)
+2018-05-28 12:08:15,882 p=31693 u=root |  changed: [controller] => (item=nova_cell0)
+2018-05-28 12:08:15,892 p=31693 u=root |  TASK [Compute : Grant proper access to nova databases] *************************
+2018-05-28 12:08:15,893 p=31693 u=root |  Monday 28 May 2018  12:08:15 +0800 (0:00:01.573)       0:43:26.947 ************ 
+2018-05-28 12:08:16,493 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:08:17,044 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:08:17,060 p=31693 u=root |  TASK [Compute : Grant proper access to nova_api databases] *********************
+2018-05-28 12:08:17,060 p=31693 u=root |  Monday 28 May 2018  12:08:17 +0800 (0:00:01.167)       0:43:28.115 ************ 
+2018-05-28 12:08:17,660 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:08:18,152 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:08:18,174 p=31693 u=root |  TASK [Compute : Grant proper access to nova_cell0 databases] *******************
+2018-05-28 12:08:18,176 p=31693 u=root |  Monday 28 May 2018  12:08:18 +0800 (0:00:01.115)       0:43:29.230 ************ 
+2018-05-28 12:08:18,810 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:08:19,341 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:08:19,353 p=31693 u=root |  TASK [Compute : Create the nova user] ******************************************
+2018-05-28 12:08:19,354 p=31693 u=root |  Monday 28 May 2018  12:08:19 +0800 (0:00:01.178)       0:43:30.408 ************ 
+2018-05-28 12:08:20,738 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:20,752 p=31693 u=root |  TASK [Compute : Create the nova user] ******************************************
+2018-05-28 12:08:20,753 p=31693 u=root |  Monday 28 May 2018  12:08:20 +0800 (0:00:01.398)       0:43:31.808 ************ 
+2018-05-28 12:08:27,734 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:27,748 p=31693 u=root |  TASK [Compute : Add the admin role to the nova user] ***************************
+2018-05-28 12:08:27,750 p=31693 u=root |  Monday 28 May 2018  12:08:27 +0800 (0:00:06.996)       0:43:38.804 ************ 
+2018-05-28 12:08:37,605 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:37,616 p=31693 u=root |  TASK [Compute : Create the nova service entity] ********************************
+2018-05-28 12:08:37,617 p=31693 u=root |  Monday 28 May 2018  12:08:37 +0800 (0:00:09.866)       0:43:48.671 ************ 
+2018-05-28 12:08:45,250 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:45,259 p=31693 u=root |  TASK [Compute : Create the Compute API service endpoints] **********************
+2018-05-28 12:08:45,260 p=31693 u=root |  Monday 28 May 2018  12:08:45 +0800 (0:00:07.643)       0:43:56.314 ************ 
+2018-05-28 12:08:46,484 p=31693 u=root |  changed: [controller]
+2018-05-28 12:08:46,492 p=31693 u=root |  TASK [Compute : Create compute api endpoints] **********************************
+2018-05-28 12:08:46,493 p=31693 u=root |  Monday 28 May 2018  12:08:46 +0800 (0:00:01.233)       0:43:57.548 ************ 
+2018-05-28 12:09:09,210 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:09,225 p=31693 u=root |  TASK [Compute : Create a Placement service user] *******************************
+2018-05-28 12:09:09,226 p=31693 u=root |  Monday 28 May 2018  12:09:09 +0800 (0:00:22.732)       0:44:20.280 ************ 
+2018-05-28 12:09:10,505 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:10,514 p=31693 u=root |  TASK [Compute : Create a Placement service user] *******************************
+2018-05-28 12:09:10,515 p=31693 u=root |  Monday 28 May 2018  12:09:10 +0800 (0:00:01.288)       0:44:21.569 ************ 
+2018-05-28 12:09:17,778 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:17,797 p=31693 u=root |  TASK [Compute : Add the Placement user to the service project with the admin role] ***
+2018-05-28 12:09:17,799 p=31693 u=root |  Monday 28 May 2018  12:09:17 +0800 (0:00:07.283)       0:44:28.853 ************ 
+2018-05-28 12:09:27,271 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:27,281 p=31693 u=root |  TASK [Compute : Create the Placement API service and endpoint] *****************
+2018-05-28 12:09:27,281 p=31693 u=root |  Monday 28 May 2018  12:09:27 +0800 (0:00:09.482)       0:44:38.336 ************ 
+2018-05-28 12:09:28,594 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:28,603 p=31693 u=root |  TASK [Compute : Create the Placement API service and endpoint] *****************
+2018-05-28 12:09:28,604 p=31693 u=root |  Monday 28 May 2018  12:09:28 +0800 (0:00:01.322)       0:44:39.658 ************ 
+2018-05-28 12:09:57,234 p=31693 u=root |  changed: [controller]
+2018-05-28 12:09:57,243 p=31693 u=root |  TASK [Compute : Install the nova packages] *************************************
+2018-05-28 12:09:57,244 p=31693 u=root |  Monday 28 May 2018  12:09:57 +0800 (0:00:28.639)       0:45:08.298 ************ 
+2018-05-28 12:12:35,770 p=31693 u=root |  changed: [controller] => (item=[u'openstack-nova-api', u'openstack-nova-conductor', u'openstack-nova-console', u'openstack-nova-novncproxy', u'openstack-nova-scheduler', u'openstack-nova-placement-api'])
+2018-05-28 12:12:35,783 p=31693 u=root |  TASK [Compute : Edit the /etc/nova/nova.conf file] *****************************
+2018-05-28 12:12:35,783 p=31693 u=root |  Monday 28 May 2018  12:12:35 +0800 (0:02:38.539)       0:47:46.838 ************ 
+2018-05-28 12:12:37,581 p=31693 u=root |  changed: [controller]
+2018-05-28 12:12:37,591 p=31693 u=root |  TASK [Compute : Due to a packaging bug] ****************************************
+2018-05-28 12:12:37,592 p=31693 u=root |  Monday 28 May 2018  12:12:37 +0800 (0:00:01.808)       0:47:48.646 ************ 
+2018-05-28 12:12:38,912 p=31693 u=root |  changed: [controller]
+2018-05-28 12:12:38,924 p=31693 u=root |  TASK [Compute : Restart the httpd service] *************************************
+2018-05-28 12:12:38,925 p=31693 u=root |  Monday 28 May 2018  12:12:38 +0800 (0:00:01.332)       0:47:49.979 ************ 
+2018-05-28 12:12:42,094 p=31693 u=root |  changed: [controller]
+2018-05-28 12:12:42,102 p=31693 u=root |  TASK [Compute : Populate the nova-api database] ********************************
+2018-05-28 12:12:42,103 p=31693 u=root |  Monday 28 May 2018  12:12:42 +0800 (0:00:03.177)       0:47:53.157 ************ 
+2018-05-28 12:13:03,265 p=31693 u=root |  changed: [controller]
+2018-05-28 12:13:03,273 p=31693 u=root |  TASK [Compute : Register the cell0 database] ***********************************
+2018-05-28 12:13:03,274 p=31693 u=root |  Monday 28 May 2018  12:13:03 +0800 (0:00:21.171)       0:48:14.329 ************ 
+2018-05-28 12:13:21,028 p=31693 u=root |  changed: [controller]
+2018-05-28 12:13:21,039 p=31693 u=root |  TASK [Compute : Create the cell1 cell] *****************************************
+2018-05-28 12:13:21,040 p=31693 u=root |  Monday 28 May 2018  12:13:21 +0800 (0:00:17.765)       0:48:32.094 ************ 
+2018-05-28 12:13:37,369 p=31693 u=root |  changed: [controller]
+2018-05-28 12:13:37,380 p=31693 u=root |  TASK [Compute : Populate the nova database] ************************************
+2018-05-28 12:13:37,381 p=31693 u=root |  Monday 28 May 2018  12:13:37 +0800 (0:00:16.340)       0:48:48.435 ************ 
+2018-05-28 12:14:47,362 p=31693 u=root |  changed: [controller]
+2018-05-28 12:14:47,373 p=31693 u=root |  TASK [Compute : start and enable service] **************************************
+2018-05-28 12:14:47,374 p=31693 u=root |  Monday 28 May 2018  12:14:47 +0800 (0:01:09.993)       0:49:58.428 ************ 
+2018-05-28 12:15:08,979 p=31693 u=root |  changed: [controller] => (item=openstack-nova-api)
+2018-05-28 12:15:25,606 p=31693 u=root |  changed: [controller] => (item=openstack-nova-consoleauth)
+2018-05-28 12:15:43,504 p=31693 u=root |  changed: [controller] => (item=openstack-nova-scheduler)
+2018-05-28 12:15:59,169 p=31693 u=root |  changed: [controller] => (item=openstack-nova-conductor)
+2018-05-28 12:16:00,698 p=31693 u=root |  changed: [controller] => (item=openstack-nova-novncproxy)
+2018-05-28 12:16:00,717 p=31693 u=root |  TASK [Compute : Install nova-compute packages] *********************************
+2018-05-28 12:16:00,718 p=31693 u=root |  Monday 28 May 2018  12:16:00 +0800 (0:01:13.343)       0:51:11.772 ************ 
+2018-05-28 12:18:51,797 p=31693 u=root |  changed: [controller]
+2018-05-28 12:18:51,805 p=31693 u=root |  TASK [Compute : Edit /etc/nova/nova.conf file] *********************************
+2018-05-28 12:18:51,806 p=31693 u=root |  Monday 28 May 2018  12:18:51 +0800 (0:02:51.087)       0:54:02.860 ************ 
+2018-05-28 12:18:53,490 p=31693 u=root |  ok: [controller]
+2018-05-28 12:18:53,501 p=31693 u=root |  TASK [Compute : Start the Compute service] *************************************
+2018-05-28 12:18:53,502 p=31693 u=root |  Monday 28 May 2018  12:18:53 +0800 (0:00:01.696)       0:54:04.557 ************ 
+2018-05-28 12:18:54,882 p=31693 u=root |  changed: [controller] => (item=libvirtd)
+2018-05-28 12:19:08,185 p=31693 u=root |  changed: [controller] => (item=openstack-nova-compute)
+2018-05-28 12:19:08,207 p=31693 u=root |  TASK [Compute : Discover compute hosts] ****************************************
+2018-05-28 12:19:08,208 p=31693 u=root |  Monday 28 May 2018  12:19:08 +0800 (0:00:14.705)       0:54:19.262 ************ 
+2018-05-28 12:19:24,654 p=31693 u=root |  changed: [controller]
+2018-05-28 12:19:24,665 p=31693 u=root |  TASK [Network : Create neutron database] ***************************************
+2018-05-28 12:19:24,666 p=31693 u=root |  Monday 28 May 2018  12:19:24 +0800 (0:00:16.458)       0:54:35.720 ************ 
+2018-05-28 12:19:25,204 p=31693 u=root |  changed: [controller]
+2018-05-28 12:19:25,216 p=31693 u=root |  TASK [Network : Grant proper access to the neutron database] *******************
+2018-05-28 12:19:25,217 p=31693 u=root |  Monday 28 May 2018  12:19:25 +0800 (0:00:00.550)       0:54:36.271 ************ 
+2018-05-28 12:19:25,838 p=31693 u=root |  changed: [controller] => (item=localhost)
+2018-05-28 12:19:26,322 p=31693 u=root |  changed: [controller] => (item=%)
+2018-05-28 12:19:26,342 p=31693 u=root |  TASK [Network : template neutron user template] ********************************
+2018-05-28 12:19:26,343 p=31693 u=root |  Monday 28 May 2018  12:19:26 +0800 (0:00:01.125)       0:54:37.397 ************ 
+2018-05-28 12:19:27,631 p=31693 u=root |  changed: [controller]
+2018-05-28 12:19:27,640 p=31693 u=root |  TASK [Network : create neutron user] *******************************************
+2018-05-28 12:19:27,641 p=31693 u=root |  Monday 28 May 2018  12:19:27 +0800 (0:00:01.298)       0:54:38.696 ************ 
+2018-05-28 12:19:57,884 p=31693 u=root |  changed: [controller]
+2018-05-28 12:19:57,887 p=31693 u=root |  TASK [Network : create neutron user again] *************************************
+2018-05-28 12:19:57,888 p=31693 u=root |  Monday 28 May 2018  12:19:57 +0800 (0:00:30.246)       0:55:08.942 ************ 
+2018-05-28 12:20:06,568 p=31693 u=root |  changed: [controller]
+2018-05-28 12:20:06,583 p=31693 u=root |  TASK [Network : Add the admin role to the neutron user] ************************
+2018-05-28 12:20:06,585 p=31693 u=root |  Monday 28 May 2018  12:20:06 +0800 (0:00:08.696)       0:55:17.639 ************ 
+2018-05-28 12:20:15,893 p=31693 u=root |  changed: [controller]
+2018-05-28 12:20:15,906 p=31693 u=root |  TASK [Network : create neutron service and api] ********************************
+2018-05-28 12:20:15,908 p=31693 u=root |  Monday 28 May 2018  12:20:15 +0800 (0:00:09.322)       0:55:26.962 ************ 
+2018-05-28 12:20:17,153 p=31693 u=root |  changed: [controller]
+2018-05-28 12:20:17,167 p=31693 u=root |  TASK [Network : bash] **********************************************************
+2018-05-28 12:20:17,169 p=31693 u=root |  Monday 28 May 2018  12:20:17 +0800 (0:00:01.260)       0:55:28.223 ************ 
+2018-05-28 12:20:41,017 p=31693 u=root |   [ERROR]: User interrupted execution
+
